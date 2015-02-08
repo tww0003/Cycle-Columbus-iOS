@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E96E4E70-4643-4E7B-8DF7-D57241F35556</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Cycle Atlanta</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6110CC6252755727643E36F2E3E0B2B306648F28</key>
+		<string>https://github.com/cledantec/Cycle-Atlanta-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Cycle Atlanta.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6110CC6252755727643E36F2E3E0B2B306648F28</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/cledantec/Cycle-Atlanta-iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6110CC6252755727643E36F2E3E0B2B306648F28</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6110CC6252755727643E36F2E3E0B2B306648F28</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Cycle-Atlanta-iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
