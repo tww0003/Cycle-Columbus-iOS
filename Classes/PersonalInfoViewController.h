@@ -44,7 +44,7 @@
 @class User;
 
 
-@interface PersonalInfoViewController : UITableViewController <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate, UIWebViewDelegate>
+@interface PersonalInfoViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate, UIWebViewDelegate>
 {
 	id <PersonalInfoDelegate> delegate;
 	NSManagedObjectContext *managedObjectContext;
@@ -63,6 +63,7 @@
     UITextField *riderHistory;
     UIToolbar *doneToolbar;
     UIActionSheet *actionSheet;
+    UIAlertController *alertController;
     UIPickerView *pickerView;
     UITextField *currentTextField;
     
@@ -82,6 +83,20 @@
     NSInteger riderTypeSelectedRow;
     NSInteger riderHistorySelectedRow;
     NSInteger selectedItem;
+    
+    // New stuff
+    
+    UIPickerView *agePicker;
+    UIPickerView *genderPicker;
+    UIPickerView *ethnicityPicker;
+    UIPickerView *incomePicker;
+    UIPickerView *frequencyPicker;
+    UIPickerView *riderTypePicker;
+    UIPickerView *riderHistoryPicker;
+    
+    UIView *testView;
+    
+    
 }
 
 @property (nonatomic,strong) FetchUser *fetchUser;

@@ -44,6 +44,13 @@
 #import "ProgressView.h"
 
 #define kMaxCyclingFreq 3
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+
+
 
 @implementation PersonalInfoViewController
 
@@ -82,14 +89,25 @@
 
 - (UITextField*)createTextFieldAlpha
 {
+    
 	CGRect frame = CGRectMake( 152, 7, 138, 29 );
 	UITextField *textField = [[UITextField alloc] initWithFrame:frame];
 	textField.borderStyle = UITextBorderStyleRoundedRect;
 	textField.textAlignment = NSTextAlignmentRight;
 	textField.placeholder = @"Choose one";
 	textField.delegate = self;
+    textField.returnKeyType = UIReturnKeyDone;
+    textField.userInteractionEnabled = YES;
 	return textField;
 }
+
+-(UIPickerView *)createPicker
+{
+    UIPickerView *picker = [[UIPickerView alloc] initWithFrame: CGRectMake(152, 7, 138, 29)];
+    picker.delegate = self;
+    return picker;
+}
+
 
 - (UITextField*)createTextFieldBeta
 {
@@ -147,6 +165,7 @@
 }
 
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -184,6 +203,10 @@
     self.cyclingFreq = [self createTextFieldBeta];
     self.riderType  =  [self createTextFieldBeta];
     self.riderHistory =[self createTextFieldBeta];
+    
+    agePicker = [[UIPickerView alloc] init];
+    agePicker = [self createPicker];
+    agePicker.dataSource = ageArray;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -263,8 +286,8 @@
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     
-    currentTextField = textField;
-    
+   // currentTextField = textField;
+    NSLog(@"Should begin editing");
     if(currentTextField == email || currentTextField == workZIP || currentTextField == homeZIP || currentTextField == schoolZIP || textField != email || textField != workZIP || textField != homeZIP || textField != schoolZIP){
         NSLog(@"currentTextField: text2");
         [currentTextField resignFirstResponder];
@@ -275,6 +298,8 @@
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)myTextField{
+    
+    NSLog(@"Did begin Editing");
     
     /*if(currentTextField == email || currentTextField == workZIP || currentTextField == homeZIP || currentTextField == schoolZIP){
         NSLog(@"currentTextField: text");
@@ -287,38 +312,44 @@
     
     currentTextField = myTextField;
     
-    if(myTextField == gender || myTextField == age || myTextField == ethnicity || myTextField == income || myTextField == cyclingFreq || myTextField == riderType || myTextField == riderHistory){
+    if(myTextField == gender || myTextField == age || myTextField == ethnicity || myTextField == income || myTextField == cyclingFreq || myTextField == riderType || myTextField == riderHistory)
+    {
         
         [myTextField resignFirstResponder];
         
+        NSLog(@"textFieldDidBeginEditing was triggered");
         
-        // THE CAUSE OF ALL THE ISSUES
-        // This is deprecated in iOS 8 which is why it's making the app react weird.
+        // This is deprecated in iOS 8 which could be why it's making the app react weird.
+        // Not totally needed, accomplished this with using uiview
         
-        actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil]; //as we want to display a subview we won't be using the default buttons but rather we're need to create a toolbar to display the buttons on
+            //actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil]; //as we want to display a subview we won't be using the default buttons but rather we're need to create a toolbar to display the buttons on
+            
+            //[actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+            
+            //[actionSheet addSubview:pickerView];
         
-        [actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+        testView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/4, pickerView.frame.size.width, pickerView.frame.size.height + 50)];
+        testView.backgroundColor = [UIColor whiteColor];
+        [self.view addSubview:testView];
         
-        [actionSheet addSubview:pickerView];
+            doneToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, pickerView.frame.size.width - 100, 44)];
+            doneToolbar.barStyle = UIBarStyleBlackOpaque;
+            [doneToolbar sizeToFit];
+            
+            NSMutableArray *barItems = [[NSMutableArray alloc] init];
+            
+            UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+            [barItems addObject:flexSpace];
+            
+            UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
+            [barItems addObject:cancelBtn];
+            
+            UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
+            [barItems addObject:doneBtn];
+            
+            [doneToolbar setItems:barItems animated:YES];
+        [testView addSubview:doneToolbar];
         
-        doneToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-        doneToolbar.barStyle = UIBarStyleBlackOpaque;
-        [doneToolbar sizeToFit];
-        
-        NSMutableArray *barItems = [[NSMutableArray alloc] init];
-        
-        UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-        [barItems addObject:flexSpace];
-        
-        UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
-        [barItems addObject:cancelBtn];
-        
-        UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
-        [barItems addObject:doneBtn];
-        
-        [doneToolbar setItems:barItems animated:YES];
-        
-        [actionSheet addSubview:doneToolbar];
         
         selectedItem = 0;
         if(myTextField == gender){
@@ -340,14 +371,17 @@
         [pickerView selectRow:selectedItem inComponent:0 animated:NO];
         
         [pickerView reloadAllComponents];
+        [testView addSubview:pickerView];
+        [testView bringSubviewToFront:pickerView];
         
-        [actionSheet addSubview:pickerView];
+        //[actionSheet addSubview:pickerView];
         
         //[self.view addSubview:actionSheet];
         //[actionSheet showInView:self.view];
         
-        [actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
-
+        //[actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
+        
+        
     }
 }
 
@@ -1048,6 +1082,7 @@
 
 - (void)cancelButtonPressed:(id)sender{
     [actionSheet dismissWithClickedButtonIndex:1 animated:YES];
+    testView.hidden = YES;
 }
 
 - (void)dealloc {
