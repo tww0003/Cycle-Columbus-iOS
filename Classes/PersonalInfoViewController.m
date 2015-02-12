@@ -319,8 +319,7 @@
         
         NSLog(@"textFieldDidBeginEditing was triggered");
         
-        // This is deprecated in iOS 8 which could be why it's making the app react weird.
-        // Not totally needed, accomplished this with using uiview
+        // UIActionSheet is deprecated in iOS 8
         
             //actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil]; //as we want to display a subview we won't be using the default buttons but rather we're need to create a toolbar to display the buttons on
             
@@ -328,14 +327,32 @@
             
             //[actionSheet addSubview:pickerView];
         
-        testView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/4, pickerView.frame.size.width, pickerView.frame.size.height + 50)];
-        testView.backgroundColor = [UIColor whiteColor];
-        [self.view addSubview:testView];
+        
+        
+        // Instead of using UIActionSheet, I placed the picker and the toolbar inside a view called pickerDisplayView
+        
+        pickerDisplayView = [[UIView alloc] initWithFrame:CGRectMake(0, self.tableView.contentOffset.y + 150, pickerView.frame.size.width, pickerView.frame.size.height + 50)];
+        pickerDisplayView.backgroundColor = [UIColor whiteColor];
+        
+        // Making the picker look pretty
+        [pickerDisplayView.layer setCornerRadius:15.0f];
+        [pickerDisplayView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+        [pickerDisplayView.layer setBorderWidth:1.5f];
+        [pickerDisplayView.layer setShadowColor:[UIColor blackColor].CGColor];
+        [pickerDisplayView.layer setShadowOpacity:0.8];
+        [pickerDisplayView.layer setShadowRadius:3.0];
+        [pickerDisplayView.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
+
+        
+        [self.view addSubview:pickerDisplayView];
+        
+        
+        // The toolbar that contains the cancel and done button
         
             doneToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, pickerView.frame.size.width - 100, 44)];
-            doneToolbar.barStyle = UIBarStyleBlackOpaque;
+            doneToolbar.backgroundColor = [UIColor clearColor];
             [doneToolbar sizeToFit];
-            
+        
             NSMutableArray *barItems = [[NSMutableArray alloc] init];
             
             UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
@@ -348,7 +365,7 @@
             [barItems addObject:doneBtn];
             
             [doneToolbar setItems:barItems animated:YES];
-        [testView addSubview:doneToolbar];
+        [pickerDisplayView addSubview:doneToolbar];
         
         
         selectedItem = 0;
@@ -369,10 +386,12 @@
         }
         
         [pickerView selectRow:selectedItem inComponent:0 animated:NO];
-        
         [pickerView reloadAllComponents];
-        [testView addSubview:pickerView];
-        [testView bringSubviewToFront:pickerView];
+        pickerView.frame = CGRectMake(0, 40, pickerDisplayView.frame.size.width, 0);
+        [pickerDisplayView addSubview:pickerView];
+        [pickerDisplayView bringSubviewToFront:pickerView];
+        
+        // Keeping this commented out code just in case
         
         //[actionSheet addSubview:pickerView];
         
@@ -445,13 +464,16 @@
 	}
 }
 
-
+/*
+ * This function is called when the save button is pressed.
+ */
 - (void)done
 {
     [email resignFirstResponder];
     [homeZIP resignFirstResponder];
     [workZIP resignFirstResponder];
     [schoolZIP resignFirstResponder];
+    
     
     NSLog(@"Saving User Data");
 	if ( user != nil )
@@ -1006,6 +1028,8 @@
 
 - (void)doneButtonPressed:(id)sender{
     
+    pickerDisplayView.hidden = YES;
+    
     NSInteger selectedRow;
     selectedRow = [pickerView selectedRowInComponent:0];
     if(currentTextField == gender){
@@ -1082,7 +1106,7 @@
 
 - (void)cancelButtonPressed:(id)sender{
     [actionSheet dismissWithClickedButtonIndex:1 animated:YES];
-    testView.hidden = YES;
+    pickerDisplayView.hidden = YES;
 }
 
 - (void)dealloc {
@@ -1100,4 +1124,3 @@
 }
 
 @end
-

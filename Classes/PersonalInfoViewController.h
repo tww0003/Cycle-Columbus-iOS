@@ -94,7 +94,7 @@
     UIPickerView *riderTypePicker;
     UIPickerView *riderHistoryPicker;
     
-    UIView *testView;
+    UIView *pickerDisplayView;
     
     
 }
