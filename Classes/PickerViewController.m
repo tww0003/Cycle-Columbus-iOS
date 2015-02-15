@@ -248,6 +248,7 @@
 {
     [super viewDidLoad];
     pickerCategory = [[NSUserDefaults standardUserDefaults] integerForKey:@"pickerCategory"];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     if (pickerCategory == 0) {
         navBarItself.topItem.title = @"Trip Purpose";
@@ -276,7 +277,7 @@
     description = [[UITextView alloc] initWithFrame:CGRectMake( 18.0, 314.0, 284.0, 120.0 )];
 	description.editable = NO;
     description.backgroundColor = [UIColor clearColor];
-    description.textColor = [UIColor whiteColor];
+    description.textColor = [UIColor blackColor];
     
 	description.font = [UIFont fontWithName:@"Helvetica" size:16];
 	[self.view addSubview:description];

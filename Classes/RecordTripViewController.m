@@ -225,7 +225,9 @@
     self.navigationController.navigationBarHidden = YES;
 	
 	// init map region to Atlanta
-	MKCoordinateRegion region = { { 33.749038, -84.388068 }, { 0.0078, 0.0068 } };
+	//MKCoordinateRegion region = { { 33.749038, -84.388068 }, { 0.0078, 0.0068 } };
+    MKCoordinateRegion region = {{ 32.4922, -84.9403 }, {0.0078, 0.0068 } };
+
 	[mapView setRegion:region animated:NO];
 	
 	// setup info button used when showing recorded trips
@@ -660,6 +662,7 @@
 	}
 	
 	// prompt to confirm first
+    /*
 	else
 	{
 		// pause updating the counter
@@ -685,6 +688,7 @@
 		
 		[actionSheet showFromTabBar:tbc.tabBar];
 	}
+     */
 }
 
 
@@ -905,6 +909,7 @@ shouldSelectViewController:(UIViewController *)viewController
 	
 	NSMutableArray *mutableFetchResults = [[noteManager.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
     
+#warning causes crash
     
     NSManagedObject *noteToDelete = [mutableFetchResults objectAtIndex:0];
     [noteManager.managedObjectContext deleteObject:noteToDelete];

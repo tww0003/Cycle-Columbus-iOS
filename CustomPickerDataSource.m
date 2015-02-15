@@ -129,12 +129,14 @@
         }
         else if (pickerCategory == 1){
             view = [[CustomView alloc] initWithFrame:CGRectZero];
-            view.title = @"Pavement issue";
+            //view.title = @"Pavement issue";
+            view.title = @"Obstructions to riding";
             //view.image = [UIImage imageNamed:kIssuePavementIssueIcon];
             [viewArray addObject:view];
             
             view = [[CustomView alloc] initWithFrame:CGRectZero];
-            view.title = @"Traffic signal";
+            //view.title = @"Traffic signal";
+            view.title = @"Bicycle detection box";
             //view.image = [UIImage imageNamed:kIssueTrafficSignalIcon];
             [viewArray addObject:view];
             
@@ -229,12 +231,15 @@
             
             
             view = [[CustomView alloc] initWithFrame:CGRectZero];
-            view.title = @"Pavement issue";
+           // view.title = @"Pavement issue";
+            view.title = @"Obstructions to riding";
             view.image = [UIImage imageNamed:kNoteThisIssue];
             [viewArray addObject:view];
             
             view = [[CustomView alloc] initWithFrame:CGRectZero];
-            view.title = @"Traffic signal";
+            //view.title = @"Traffic signal";
+            view.title = @"Bicycle detection box";
+
             view.image = [UIImage imageNamed:kNoteThisIssue];
             [viewArray addObject:view];
             
