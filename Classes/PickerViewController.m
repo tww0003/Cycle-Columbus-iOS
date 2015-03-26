@@ -71,6 +71,8 @@
 	customPickerDataSource.parent = self;
 	customPickerView.dataSource = customPickerDataSource;
 	customPickerView.delegate = customPickerDataSource;
+    customPickerView.layer.borderWidth = 1;
+    customPickerView.layer.cornerRadius = 5;
 	
 	// note we are using CGRectZero for the dimensions of our picker view,
 	// this is because picker views have a built in optimum size,
@@ -81,7 +83,7 @@
 	customPickerView.frame = [self pickerFrameWithSize:pickerSize];
 	
 	customPickerView.showsSelectionIndicator = YES;
-	
+    
 	// add this picker to our view controller, initially hidden
 	//customPickerView.hidden = YES;
 	[self.view addSubview:customPickerView];
@@ -278,6 +280,8 @@
 	description.editable = NO;
     description.backgroundColor = [UIColor clearColor];
     description.textColor = [UIColor blackColor];
+    description.layer.borderWidth = 1;
+    description.layer.cornerRadius = 5;
     
 	description.font = [UIFont fontWithName:@"Helvetica" size:16];
 	[self.view addSubview:description];

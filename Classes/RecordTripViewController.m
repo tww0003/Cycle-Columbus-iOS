@@ -284,7 +284,7 @@
     [noteButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     [noteButton setTitleColor:[[UIColor alloc] initWithRed:185.0 / 255 green:91.0 / 255 blue:47.0 / 255 alpha:1.0 ] forState:UIControlStateHighlighted];
     
-//    noteButton.backgroundColor = [UIColor clearColor];
+    noteButton.backgroundColor = [UIColor clearColor];
     noteButton.enabled = YES;
     
     [noteButton setTitle:@"Note this..." forState:UIControlStateNormal];
@@ -402,27 +402,32 @@
 	
 	NSMutableArray *mutableFetchResults = [[tripManager.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
     
-    NSManagedObject *tripToDelete = [mutableFetchResults objectAtIndex:0];
-    
-    
-    if (tripManager.trip!= nil && tripManager.trip.saved == nil) {
-        [noteManager.managedObjectContext deleteObject:tripToDelete];
-    }
-    
-    
-    if (![tripManager.managedObjectContext save:&error]) {
-        // Handle the error.
-        NSLog(@"Unresolved error %@", [error localizedDescription]);
-    }
+    if([mutableFetchResults count] > 0)
+       {
+           NSManagedObject *tripToDelete = [mutableFetchResults objectAtIndex:0];
+           
+           if (tripManager.trip!= nil && tripManager.trip.saved == nil) {
+               [noteManager.managedObjectContext deleteObject:tripToDelete];
+           }
+           
+           
+           if (![tripManager.managedObjectContext save:&error]) {
+               // Handle the error.
+               NSLog(@"Unresolved error %@", [error localizedDescription]);
+           }
 
-    
-	// reset button states
+       }
+    //
+    else{
+        NSLog(@"There is nothing in NSManagedObject *tripToDelete = [mutableFetchResults objectAtIndex:0];");
+    }
+    // reset button states
     appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.isRecording = NO;
-	recording = NO;
+    recording = NO;
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey: @"recording"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-	startButton.enabled = YES;
+    startButton.enabled = YES;
     UIImage *buttonImage = [[UIImage imageNamed:@"greenButton.png"]
                             resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
     UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greenButtonHighlight.png"]
@@ -431,15 +436,16 @@
     [startButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [startButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     [startButton setTitle:@"Start" forState:UIControlStateNormal];
-	
-	// reset trip, reminder managers
-	NSManagedObjectContext *context = tripManager.managedObjectContext;
-	[self initTripManager:[[TripManager alloc] initWithManagedObjectContext:context]];
-	tripManager.dirty = YES;
+    
+    // reset trip, reminder managers
+    NSManagedObjectContext *context = tripManager.managedObjectContext;
+    [self initTripManager:[[TripManager alloc] initWithManagedObjectContext:context]];
+    tripManager.dirty = YES;
+    
+    [self resetCounter];
+    [self resetTimer];
 
-	[self resetCounter];
-	[self resetTimer];
-
+    
 }
 
 
@@ -592,13 +598,18 @@
 	if ( YES )
 	{
 		// Trip Purpose
-		NSLog(@"INIT + PUSH");
-		PickerViewController *tripPurposePickerView = [[PickerViewController alloc]
-													  //initWithPurpose:[tripManager getPurposeIndex]];
-													  initWithNibName:@"TripPurposePicker" bundle:nil];
-		[tripPurposePickerView setDelegate:self];
-		//[self.navigationController presentModalViewController:tripPurposePickerView animated:YES];
-        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+		NSLog(@"INIT + PUSH TripPurposePickerView");
+//		PickerViewController *tripPurposePickerView = [[PickerViewController alloc]
+//													  //initWithPurpose:[tripManager getPurposeIndex]];
+//													  initWithNibName:@"TripPurposePicker" bundle:nil];
+//		[tripPurposePickerView setDelegate:self];
+//		//[self.navigationController presentModalViewController:tripPurposePickerView animated:YES];
+//        [self.navigationController pushViewController:tripPurposePickerView animated:YES];
+//        //[self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        
+        tripPurpVC = [[NewTripPurposeViewController alloc] init];
+        [tripPurpVC setDelegate:self];
+        [self.navigationController pushViewController:tripPurpVC animated:YES];
 
 	}
 	
@@ -649,13 +660,17 @@
 		NSLog(@"INIT + PUSH");
         
         
-		PickerViewController *notePickerView = [[PickerViewController alloc]
-                                                       //initWithPurpose:[tripManager getPurposeIndex]];
-                                                       initWithNibName:@"TripPurposePicker" bundle:nil];
-		[notePickerView setDelegate:self];
-		//[[self navigationController] pushViewController:pickerViewController animated:YES];
-		//[self.navigationController presentModalViewController:notePickerView animated:YES];
-        [self.navigationController presentViewController:notePickerView animated:YES completion:nil];
+//		PickerViewController *notePickerView = [[PickerViewController alloc]
+//                                                       //initWithPurpose:[tripManager getPurposeIndex]];
+//                                                       initWithNibName:@"TripPurposePicker" bundle:nil];
+//		[notePickerView setDelegate:self];
+//		//[[self navigationController] pushViewController:pickerViewController animated:YES];
+//		//[self.navigationController presentModalViewController:notePickerView animated:YES];
+//        [self.navigationController presentViewController:notePickerView animated:YES completion:nil];
+        
+        pickerVC = [[NewPickerViewController alloc] init];
+        [pickerVC setDelegate:self];
+        [self.navigationController presentViewController:pickerVC animated:YES completion:nil];
         
         //add location information
         
@@ -751,7 +766,6 @@
 		//self.timeCounter.text = [NSString stringWithFormat:@"%.1f sec", interval];
 		self.timeCounter.text = [inputFormatter stringFromDate:outputDate];
 	}
-
 }
 
 
@@ -911,13 +925,13 @@ shouldSelectViewController:(UIViewController *)viewController
     
 #warning causes crash
     
-    NSManagedObject *noteToDelete = [mutableFetchResults objectAtIndex:0];
-    [noteManager.managedObjectContext deleteObject:noteToDelete];
+    //NSManagedObject *noteToDelete = [mutableFetchResults objectAtIndex:0];
+    //[noteManager.managedObjectContext deleteObject:noteToDelete];
     
-    if (![noteManager.managedObjectContext save:&error]) {
+    //if (![noteManager.managedObjectContext save:&error]) {
         // Handle the error.
         NSLog(@"Unresolved error %@", [error localizedDescription]);
-    }
+    //}
     
 
 }

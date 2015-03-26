@@ -107,7 +107,8 @@
             NSString *postLength = [NSString stringWithFormat:@"%d", [body length]];
             [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
             
-        } else {
+        }
+        else {
             // create the POST request for saving a Trip
             [request setValue:@"gzip" forHTTPHeaderField:@"Content-Encoding"];
             // this is a bit grotty, but it indicates a) cycleatl namespace

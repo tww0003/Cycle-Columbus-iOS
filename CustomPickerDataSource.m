@@ -85,6 +85,8 @@
 		
         CustomView *view;
         pickerCategory = [[NSUserDefaults standardUserDefaults] integerForKey:@"pickerCategory"];
+    
+        
         
         if (pickerCategory == 0) {
             view = [[CustomView alloc] initWithFrame:CGRectZero];
@@ -269,7 +271,6 @@
 	}
 	return self;
 }
-
 
 
 #pragma mark UIPickerViewDataSource

@@ -28,7 +28,7 @@
  *   along with CycleTracks.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-//
+
 //  constants.h
 //  CycleTracks
 //
@@ -98,8 +98,8 @@
 #define kInfoURL			@"http://cycleatlanta.org/CycleAtlantaInfo"
 #define kInstructionsURL	@"http://cycleatlanta.org/instructions-v2/"
 
-#define kSaveURL			@"http://cycleatlanta.org/post/"
-#define kFetchURL			@"http://cycleatlanta.org/fetch/"
+#define kSaveURL			@"http://FountainCityCycling.org/post/"
+#define kFetchURL			@"http://FountainCityCycling.org/fetch/"
 
 #define kTripNotesPlaceholder	@"Comments"
 

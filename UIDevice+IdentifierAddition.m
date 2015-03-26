@@ -72,6 +72,8 @@
                            *ptr, *(ptr+1), *(ptr+2), *(ptr+3), *(ptr+4), *(ptr+5)];
     free(buf);
     
+    NSLog(@"\n\n\nThis is the device number thingy %@ \n\n\n\n\n", outstring);
+    
     return outstring;
 }
 
@@ -85,6 +87,9 @@
     
     NSString *stringToHash = [NSString stringWithFormat:@"%@%@",macaddress,bundleIdentifier];
     NSString *uniqueIdentifier = [stringToHash stringFromMD5];
+    
+    NSLog(@"\n\n\nThis is the unique identifer %@ \n\n\n\n\n", uniqueIdentifier);
+
     
     return uniqueIdentifier;
 }

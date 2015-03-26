@@ -170,6 +170,9 @@
 {
     [super viewDidLoad];
     
+    infoVC = [[InformationViewController alloc] init];
+    infoNav = [[UINavigationController alloc] initWithRootViewController:infoVC];
+    
     genderArray = [[NSArray alloc]initWithObjects: @" ", @"Female",@"Male", nil];
     
     ageArray = [[NSArray alloc]initWithObjects: @" ", @"Less than 18", @"18-24", @"25-34", @"35-44", @"45-54", @"55-64", @"65+", nil];
@@ -886,7 +889,9 @@
 			switch ([indexPath indexAtPosition:1])
 			{
 				case 0:
-                    [[UIApplication sharedApplication] openURL:[request URL]];
+                    //[[UIApplication sharedApplication] openURL:[request URL]];
+                    [self.navigationController presentViewController:infoNav animated:YES completion:nil];
+                    
 					break;
 				case 1:
 					break;

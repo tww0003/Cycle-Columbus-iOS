@@ -177,13 +177,27 @@
 		9D8A1BB2171B03E900509FBD /* FetchTripData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A1BB1171B03E900509FBD /* FetchTripData.m */; };
 		9DD65FBB16FEA3CC00F2EB63 /* ImageResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD65FBA16FEA3CC00F2EB63 /* ImageResize.m */; };
 		9DF4254D17590D820030759A /* FetchNoteData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4254C17590D820030759A /* FetchNoteData.m */; };
+		DD661F991ABF442F0004168B /* NewPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD661F971ABF442F0004168B /* NewPickerViewController.m */; };
+		DD661F9A1ABF442F0004168B /* NewPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD661F981ABF442F0004168B /* NewPickerViewController.xib */; };
+		DD661F9E1ABF72400004168B /* NewTripPurposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD661F9C1ABF72400004168B /* NewTripPurposeViewController.m */; };
+		DD661F9F1ABF72400004168B /* NewTripPurposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD661F9D1ABF72400004168B /* NewTripPurposeViewController.xib */; };
+		DDD891FB1ABCD5B600046C72 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD891F91ABCD5B600046C72 /* InformationViewController.m */; };
+		DDD891FC1ABCD5B600046C72 /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDD891FA1ABCD5B600046C72 /* InformationViewController.xib */; };
+		DDD892041ABCD67E00046C72 /* intro.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD891FD1ABCD67E00046C72 /* intro.png */; };
+		DDD892051ABCD67E00046C72 /* note-detail.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD891FE1ABCD67E00046C72 /* note-detail.png */; };
+		DDD892061ABCD67E00046C72 /* note-type.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD891FF1ABCD67E00046C72 /* note-type.png */; };
+		DDD892071ABCD67E00046C72 /* recording.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD892001ABCD67E00046C72 /* recording.png */; };
+		DDD892081ABCD67E00046C72 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD892011ABCD67E00046C72 /* settings.png */; };
+		DDD892091ABCD67E00046C72 /* trip-map.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD892021ABCD67E00046C72 /* trip-map.png */; };
+		DDD8920A1ABCD67E00046C72 /* trip-type.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD892031ABCD67E00046C72 /* trip-type.png */; };
+		DDD8920C1ABCDC8000046C72 /* note-list.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD8920B1ABCDC8000046C72 /* note-list.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* CycleAtlantaAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleAtlantaAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* CycleAtlantaAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleAtlantaAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* Cycle Atlanta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cycle Atlanta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Cycle Columbus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cycle Columbus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28D801B30F44B63D00FB423F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -393,6 +407,23 @@
 		9DD65FBA16FEA3CC00F2EB63 /* ImageResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResize.m; sourceTree = "<group>"; };
 		9DF4254B17590D820030759A /* FetchNoteData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchNoteData.h; sourceTree = "<group>"; };
 		9DF4254C17590D820030759A /* FetchNoteData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchNoteData.m; sourceTree = "<group>"; };
+		DD661F961ABF442F0004168B /* NewPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPickerViewController.h; sourceTree = "<group>"; };
+		DD661F971ABF442F0004168B /* NewPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPickerViewController.m; sourceTree = "<group>"; };
+		DD661F981ABF442F0004168B /* NewPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewPickerViewController.xib; sourceTree = "<group>"; };
+		DD661F9B1ABF72400004168B /* NewTripPurposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTripPurposeViewController.h; sourceTree = "<group>"; };
+		DD661F9C1ABF72400004168B /* NewTripPurposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTripPurposeViewController.m; sourceTree = "<group>"; };
+		DD661F9D1ABF72400004168B /* NewTripPurposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTripPurposeViewController.xib; sourceTree = "<group>"; };
+		DDD891F81ABCD5B600046C72 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
+		DDD891F91ABCD5B600046C72 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
+		DDD891FA1ABCD5B600046C72 /* InformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
+		DDD891FD1ABCD67E00046C72 /* intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = intro.png; path = Images/intro.png; sourceTree = "<group>"; };
+		DDD891FE1ABCD67E00046C72 /* note-detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "note-detail.png"; path = "Images/note-detail.png"; sourceTree = "<group>"; };
+		DDD891FF1ABCD67E00046C72 /* note-type.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "note-type.png"; path = "Images/note-type.png"; sourceTree = "<group>"; };
+		DDD892001ABCD67E00046C72 /* recording.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recording.png; path = Images/recording.png; sourceTree = "<group>"; };
+		DDD892011ABCD67E00046C72 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Images/settings.png; sourceTree = "<group>"; };
+		DDD892021ABCD67E00046C72 /* trip-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trip-map.png"; path = "Images/trip-map.png"; sourceTree = "<group>"; };
+		DDD892031ABCD67E00046C72 /* trip-type.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trip-type.png"; path = "Images/trip-type.png"; sourceTree = "<group>"; };
+		DDD8920B1ABCDC8000046C72 /* note-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "note-list.png"; path = "Images/note-list.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,6 +512,15 @@
 				8FAD930416F189EE00082B6F /* UIImageViewResizable.m */,
 				9D504D9F16B6CF4000B99EBC /* ZipUtil.h */,
 				9D504DA016B6CF4000B99EBC /* ZipUtil.m */,
+				DDD891F81ABCD5B600046C72 /* InformationViewController.h */,
+				DDD891F91ABCD5B600046C72 /* InformationViewController.m */,
+				DDD891FA1ABCD5B600046C72 /* InformationViewController.xib */,
+				DD661F961ABF442F0004168B /* NewPickerViewController.h */,
+				DD661F971ABF442F0004168B /* NewPickerViewController.m */,
+				DD661F981ABF442F0004168B /* NewPickerViewController.xib */,
+				DD661F9B1ABF72400004168B /* NewTripPurposeViewController.h */,
+				DD661F9C1ABF72400004168B /* NewTripPurposeViewController.m */,
+				DD661F9D1ABF72400004168B /* NewTripPurposeViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -488,7 +528,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Cycle Atlanta.app */,
+				1D6058910D05DD3D006BFB54 /* Cycle Columbus.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -592,6 +632,14 @@
 		6411A16A106A05DE00C201F0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DDD8920B1ABCDC8000046C72 /* note-list.png */,
+				DDD891FD1ABCD67E00046C72 /* intro.png */,
+				DDD891FE1ABCD67E00046C72 /* note-detail.png */,
+				DDD891FF1ABCD67E00046C72 /* note-type.png */,
+				DDD892001ABCD67E00046C72 /* recording.png */,
+				DDD892011ABCD67E00046C72 /* settings.png */,
+				DDD892021ABCD67E00046C72 /* trip-map.png */,
+				DDD892031ABCD67E00046C72 /* trip-type.png */,
 				9D3056F1174410EA0091B214 /* noise.png */,
 				9D3CDAD016D6F7A900F423B8 /* lcdScreen.png */,
 				9D3CDAD116D6F7A900F423B8 /* lcdScreen@2x.png */,
@@ -766,7 +814,7 @@
 			);
 			name = "Cycle Atlanta";
 			productName = CycleTracks;
-			productReference = 1D6058910D05DD3D006BFB54 /* Cycle Atlanta.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* Cycle Columbus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -776,6 +824,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0440;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = G8R4U366NA;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cycle Atlanta" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -810,6 +863,7 @@
 				64577E29106DC2FD003ACBFD /* dist.plist in Resources */,
 				642F150C1071D9910050BCB9 /* MapViewController.xib in Resources */,
 				6458114E107AA4D30075DABD /* bicycle-bell-normalized.aiff in Resources */,
+				DDD892081ABCD67E00046C72 /* settings.png in Resources */,
 				644ED3E410853DEC008725A8 /* commuter2.png in Resources */,
 				64210F29113508B800415F1A /* MainWindow.xib in Resources */,
 				64FCC5B411352242000FA1B6 /* PersonalInfo.xib in Resources */,
@@ -818,6 +872,7 @@
 				9D4647B81604EBF400A4F9CB /* blueButton@2x.png in Resources */,
 				9D4647B91604EBF400A4F9CB /* blueButtonHighlight.png in Resources */,
 				9D4647BA1604EBF400A4F9CB /* blueButtonHighlight@2x.png in Resources */,
+				DDD8920C1ABCDC8000046C72 /* note-list.png in Resources */,
 				9D4647BB1604EBF400A4F9CB /* greenButton.png in Resources */,
 				9D4647BC1604EBF400A4F9CB /* greenButton@2x.png in Resources */,
 				9D4647BD1604EBF400A4F9CB /* greenButtonHighlight.png in Resources */,
@@ -838,6 +893,7 @@
 				9D4647E81604EF1200A4F9CB /* GreenCheckMark2.png in Resources */,
 				9D4647E91604EF1200A4F9CB /* GreenCheckMark3.png in Resources */,
 				9D4647EA1604EF1200A4F9CB /* LargeCounter.png in Resources */,
+				DDD892091ABCD67E00046C72 /* trip-map.png in Resources */,
 				9D4647EB1604EF1200A4F9CB /* lock_button1.png in Resources */,
 				9D4647EC1604EF1200A4F9CB /* lock_button2.png in Resources */,
 				9D4647ED1604EF1200A4F9CB /* lock_button_fpo.png in Resources */,
@@ -861,9 +917,12 @@
 				9D4648131604EF2600A4F9CB /* exercise@2x.png in Resources */,
 				9D4648141604EF2600A4F9CB /* failedUpload.png in Resources */,
 				9D4648151604EF2600A4F9CB /* failedUpload@2x.png in Resources */,
+				DD661F9F1ABF72400004168B /* NewTripPurposeViewController.xib in Resources */,
 				9D4648161604EF2600A4F9CB /* other.png in Resources */,
 				9D4648171604EF2600A4F9CB /* other@2x.png in Resources */,
+				DDD892041ABCD67E00046C72 /* intro.png in Resources */,
 				9D4648181604EF2600A4F9CB /* school.png in Resources */,
+				DDD892071ABCD67E00046C72 /* recording.png in Resources */,
 				9D4648191604EF2600A4F9CB /* school@2x.png in Resources */,
 				9D46481A1604EF2600A4F9CB /* shopping.png in Resources */,
 				9D46481B1604EF2600A4F9CB /* shopping@2x.png in Resources */,
@@ -876,6 +935,7 @@
 				9D4648281604EF2F00A4F9CB /* lcd-screen@2x.png in Resources */,
 				9D4648291604EF2F00A4F9CB /* MapCoord.png in Resources */,
 				9D46482A1604EF2F00A4F9CB /* record-map-frame-288x141.png in Resources */,
+				DDD8920A1ABCD67E00046C72 /* trip-type.png in Resources */,
 				9D4648341604EF3800A4F9CB /* tabbar_instructions.png in Resources */,
 				9D4648351604EF3800A4F9CB /* tabbar_instructions@2x.png in Resources */,
 				9D4648361604EF3800A4F9CB /* tabbar_record.png in Resources */,
@@ -894,16 +954,20 @@
 				8FD62A3C16B2253100B54A35 /* Default-568h@2x.png in Resources */,
 				9D3CDAD416D6F7A900F423B8 /* lcdScreen.png in Resources */,
 				9D3CDAD516D6F7A900F423B8 /* lcdScreen@2x.png in Resources */,
+				DDD892061ABCD67E00046C72 /* note-type.png in Resources */,
 				9D3CDAD616D6F7A900F423B8 /* photoFrame.png in Resources */,
 				9D3CDAD716D6F7A900F423B8 /* photoFrame@2x.png in Resources */,
 				9D3CDADA16D6F7C900F423B8 /* tabbar_notes.png in Resources */,
 				9D3CDADB16D6F7C900F423B8 /* tabbar_notes@2x.png in Resources */,
+				DD661F9A1ABF442F0004168B /* NewPickerViewController.xib in Resources */,
 				9D3CDADE16D7041F00F423B8 /* whiteButton.png in Resources */,
 				9D3CDADF16D7041F00F423B8 /* whiteButton@2x.png in Resources */,
 				9D3CDAE216D7056F00F423B8 /* whiteButtonHighlight.png in Resources */,
+				DDD891FC1ABCD5B600046C72 /* InformationViewController.xib in Resources */,
 				9D3CDAE316D7056F00F423B8 /* whiteButtonHighlight@2x.png in Resources */,
 				9D6D31A716D7C017007A2497 /* noteAssetPicker.png in Resources */,
 				9D6D31A816D7C017007A2497 /* noteAssetPicker@2x.png in Resources */,
+				DDD892051ABCD67E00046C72 /* note-detail.png in Resources */,
 				9D6D31A916D7C017007A2497 /* noteIssuePicker.png in Resources */,
 				9D6D31AA16D7C017007A2497 /* noteIssuePicker@2x.png in Resources */,
 				9D6D31AD16D7C189007A2497 /* noteBlankPicker.png in Resources */,
@@ -944,6 +1008,7 @@
 				642F15271071DA700050BCB9 /* MapViewController.m in Sources */,
 				642F161D1071ED1C0050BCB9 /* MapCoord.m in Sources */,
 				6426476E1073FEC300E43DEF /* ReminderManager.m in Sources */,
+				DD661F9E1ABF72400004168B /* NewTripPurposeViewController.m in Sources */,
 				64210F6111350C8500415F1A /* AboutViewController.m in Sources */,
 				645E4EDC1200C1C800EFF0E6 /* LoadingView.m in Sources */,
 				8F5E60661602CBE000D8F85D /* NSString+MD5Addition.m in Sources */,
@@ -957,9 +1022,11 @@
 				8F9C086A16DC947A003EA308 /* User.m in Sources */,
 				8F9C086D16DC947A003EA308 /* Coord.m in Sources */,
 				8FBCD3CA16E0E58100C11EBE /* NoteViewController.m in Sources */,
+				DD661F991ABF442F0004168B /* NewPickerViewController.m in Sources */,
 				8F25EC7916E13E7C004263D4 /* SavedNotesViewController.m in Sources */,
 				8F20B0AC16F0F08A00031712 /* TripDetailViewController.m in Sources */,
 				8FAD930516F189EE00082B6F /* UIImageViewResizable.m in Sources */,
+				DDD891FB1ABCD5B600046C72 /* InformationViewController.m in Sources */,
 				9DD65FBB16FEA3CC00F2EB63 /* ImageResize.m in Sources */,
 				8F316F671703161E0087529E /* Model.xcmappingmodel in Sources */,
 				9D8A1BAF171B03E000509FBD /* FetchUser.m in Sources */,
@@ -987,7 +1054,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Cycle Atlanta";
+				PRODUCT_NAME = "Cycle Columbus";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -1006,7 +1073,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Cycle Atlanta";
+				PRODUCT_NAME = "Cycle Columbus";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -1038,7 +1105,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Cycle Atlanta";
+				PRODUCT_NAME = "Cycle Columbus";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -1075,7 +1142,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Cycle Atlanta";
+				PRODUCT_NAME = "Cycle Columbus";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -1108,7 +1175,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Cycle Atlanta";
+				PRODUCT_NAME = "Cycle Columbus";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};

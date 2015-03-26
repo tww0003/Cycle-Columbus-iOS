@@ -53,8 +53,8 @@ static UIImage *shrinkImage(UIImage *original, CGSize size);
 - (void)viewDidLoad
 {
     //[self.detailTextView setText:@"Enter More Details Here"];
-    
     [super viewDidLoad];
+    [self.view bringSubviewToFront:addPicButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated

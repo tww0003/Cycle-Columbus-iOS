@@ -46,6 +46,8 @@
 #import "TripPurposeDelegate.h"
 #import "CycleAtlantaAppDelegate.h"
 #import "Note.h"
+#import "NewPickerViewController.h"
+#import "NewTripPurposeViewController.h"
 
 
 @class ReminderManager;
@@ -94,6 +96,8 @@
 	TripManager		*tripManager;
     NoteManager *noteManager;
     
+    NewPickerViewController *pickerVC;
+    NewTripPurposeViewController *tripPurpVC;
     
     CLLocation *myLocation;
 

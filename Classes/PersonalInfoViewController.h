@@ -40,6 +40,7 @@
 #import <UIKit/UIKit.h>
 #import "PersonalInfoDelegate.h"
 #import "FetchUser.h"
+#import "InformationViewController.h"
 
 @class User;
 
@@ -49,6 +50,9 @@
 	id <PersonalInfoDelegate> delegate;
 	NSManagedObjectContext *managedObjectContext;
 	User *user;
+    
+    InformationViewController *infoVC;
+    UINavigationController *infoNav;
 
 	UITextField *age;
 	UITextField *email;

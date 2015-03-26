@@ -62,10 +62,13 @@
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey: @"pickerCategory"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    NSLog(@"picker category = %i", pickerCategory);
     details = @"";
     
     [delegate didEnterTripDetails:details];
     [delegate saveTrip];
+    //[self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(IBAction)saveDetail:(id)sender{
@@ -77,10 +80,14 @@
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey: @"pickerCategory"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    NSLog(@"picker category = %i", pickerCategory);
+    
     details = detailTextView.text;
     
     [delegate didEnterTripDetails:details];
     [delegate saveTrip];
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 
