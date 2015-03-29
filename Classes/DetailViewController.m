@@ -54,7 +54,16 @@ static UIImage *shrinkImage(UIImage *original, CGSize size);
 {
     //[self.detailTextView setText:@"Enter More Details Here"];
     [super viewDidLoad];
-    [self.view bringSubviewToFront:addPicButton];
+    //[self.view bringSubviewToFront:addPicButton];
+    
+    UIButton *addImageBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 75, 102, 157)];
+    [addImageBtn setTitle:@"Add Pic" forState:UIControlStateNormal];
+    [addImageBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [addImageBtn addTarget:self action:@selector(takePhotoOrUpload) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:addImageBtn];
+    [self.view bringSubviewToFront:addImageBtn];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -126,6 +135,34 @@ static UIImage *shrinkImage(UIImage *original, CGSize size);
     [delegate saveNote];
 }
 
+-(void)takePhotoOrUpload
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Take a Photo or Upload" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: @"Take photo", @"Upload Photo", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // Cancel
+    if(buttonIndex == 0)
+    {
+        NSLog(@"Add photo canceled");
+    }
+    // Take photo
+    else if(buttonIndex == 1)
+    {
+        NSLog(@"Take photo pressed");
+        [self shootPictureOrVideo:nil];
+    }
+    // Upload photo
+    else if(buttonIndex == 2)
+    {
+        NSLog(@"Upload Photo pressed");
+        [self selectExistingPictureOrVideo:nil];
+    }
+}
+
+
 - (IBAction)shootPictureOrVideo:(id)sender {
     [self getMediaFromSource:UIImagePickerControllerSourceTypeCamera];
 }
@@ -154,11 +191,17 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     self.image = [ImageResize imageWithImage:castedImage scaledToSize:CGSizeMake(290, 192)];
     //[picker dismissModalViewControllerAnimated:YES];
     [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    if([imageData length] > 0)
+    {
+        addPicButton.enabled = NO;
+    }
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     //[picker dismissModalViewControllerAnimated:YES];
     [picker dismissViewControllerAnimated:YES completion:nil];
+    addPicButton.enabled = YES;
 }
 
 #pragma mark  -

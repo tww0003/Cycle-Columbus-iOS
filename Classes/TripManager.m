@@ -520,7 +520,8 @@
     uploadingView = [LoadingView loadingViewInView:parent.parentViewController.view messageString:kSavingTitle];
 
     //switch to map w/ trip view
-    #warning not sure if I'm referencing the correct method. There are two with this name
+    // not sure if I'm referencing the correct method. There are two with this name
+    
     //[parent displayUploadedTripMap];
     [savedTrips displayUploadedTripMap];
     if ( theConnection )

@@ -41,6 +41,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "ActivityIndicatorDelegate.h"
 #import <MapKit/MapKit.h>
+#import <MapKit/MKAnnotation.h>
 #import "PersonalInfoDelegate.h"
 #import "RecordingInProgressDelegate.h"
 #import "TripPurposeDelegate.h"
@@ -119,6 +120,7 @@
 @property (nonatomic, strong) TripManager *tripManager;
 @property (nonatomic, strong) NoteManager *noteManager;
 @property (nonatomic, strong) CycleAtlantaAppDelegate *appDelegate;
+@property (nonatomic, retain) CLLocationManager *locationManager;
 
 - (void)initTripManager:(TripManager*)manager;
 - (void)initNoteManager:(NoteManager*)manager;

@@ -75,7 +75,7 @@
                 
         if(![newNote.image_url isEqual: @""])
         {
-            NSString *url = @"http://cycleatlanta.org/uploads/";
+            NSString *url = @"http://fountaincitycycling.org/uploads/";
             url = [url stringByAppendingString:newNote.image_url];
             url = [url stringByAppendingString:@".jpg"];
             NSLog(@"Note image URL: %@",url);

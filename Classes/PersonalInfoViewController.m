@@ -604,7 +604,7 @@
 			return @"How long have you been a cyclist?";
 			break;
         case 6:
-			return @"Are you missing trips you saved in an earlier version of Cycle Atlanta (or if you had to re-install the app for any reason)? ";
+			return @"Are you missing trips you saved in an earlier version of Cycle Columbus (or if you had to re-install the app for any reason)? ";
 			break;
 	}
     return nil;
@@ -707,7 +707,7 @@
 			switch ([indexPath indexAtPosition:1])
 			{
 				case 0:
-					cell.textLabel.text = @"Getting started with Cycle Atlanta";
+					cell.textLabel.text = @"Getting started with Cycle Columbus";
 					break;
 			}
 			

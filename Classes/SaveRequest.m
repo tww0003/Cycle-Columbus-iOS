@@ -89,13 +89,17 @@
             }                        
             
             // add image data
-            if (imageData) {
+            if (imageData.length > 0) {
                 NSLog(@"there's an image");
                 [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
                 [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"%@.jpg\"\r\n", deviceUniqueIdHash] dataUsingEncoding:NSUTF8StringEncoding]];
                 [body appendData:[@"Content-Type: image/jpeg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
                 [body appendData:imageData];
                 [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+            }
+            else
+            {
+                NSLog(@"No image data");
             }
             
             [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];

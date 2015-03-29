@@ -22,7 +22,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "TripPurposeDelegate.h"
 
-@interface DetailViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate>{
+@interface DetailViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UIAlertViewDelegate>{
     id <TripPurposeDelegate> delegate;
     UITextView *detailTextView;
     UIButton *addPicButton;
@@ -36,7 +36,6 @@
 
 @property (nonatomic, strong) IBOutlet UITextView *detailTextView;
 @property (nonatomic, strong) IBOutlet UIButton *addPicButton;
-
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UIImageView *imageFrameView;
 

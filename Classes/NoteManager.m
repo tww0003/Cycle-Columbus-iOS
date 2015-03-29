@@ -373,20 +373,23 @@
 		switch ( [httpResponse statusCode] )
 		{
 			case 200:
-                NSLog(@"\n\n\n\n\nFUCK!\n\n\n\n\n\n\n");
+                NSLog(@"\n200 response\n");
                 break;
                 
 			case 201:
+                NSLog(@"\n201 response\n");
 				success = YES;
 				title	= kSuccessTitle;
 				message = kSaveSuccess;
 				break;
 			case 202:
+                NSLog(@"\n202 response\n");
 				success = YES;
 				title	= kSuccessTitle;
 				message = kSaveAccepted;
 				break;
 			case 500:
+                NSLog(@"\n500 resonse");
 			default:
 				title = @"Internal Server Error";
 				//message = [NSString stringWithFormat:@"%d", [httpResponse statusCode]];
@@ -478,9 +481,6 @@
 
 - (void)dealloc {
     self.dirty = nil;
-    
-    
-    
 }
 
 

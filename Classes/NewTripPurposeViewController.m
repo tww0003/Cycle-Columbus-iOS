@@ -33,20 +33,12 @@
     descriptionTextView.text = [descriptionArray objectAtIndex:0];
     thePicker.backgroundColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor lightGrayColor];
-    //saveBtn.enabled = NO;
+    saveBtn.enabled = YES;
 
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow: (NSInteger)row inComponent:(NSInteger)component
 {
-    if(row < 6 || row > 6)
-    {
-        saveBtn.enabled = YES;
-    }
-    else
-    {
-        saveBtn.enabled = NO;
-    }
     rowNum = row;
     descriptionTextView.text = descriptionArray[row];
 }
@@ -92,7 +84,7 @@
 
 - (UIView *) pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
-    if(row < 8)
+    if(row < [pickerCategories count])
     {
         tripPickView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, tripPickView.frame.size.width - 50, 27)];
@@ -154,9 +146,6 @@
     //[self presentModalViewController:tripDetailViewController animated:YES];
     [self presentViewController:tripDetailViewController animated:YES completion:nil];
     [self.navigationController popViewControllerAnimated:YES];
-    
-    
-    
 }
 
 

@@ -25,9 +25,11 @@
     
     
     // All the categories of the picker. 0 - 5 should have a blue astric, 7 - 12 should have a red astric
+    
+    // Need to add "Parks", "Obstructions to riding", and "Bicycle detection box"
     pickerCategories = @[@"Note this asset", @"Water fountains", @"Secret passage", @"Public restrooms", @"Bike Shops", @"Bike parking", @"...", @"Pavement issue", @"Traffic signal", @"Enforcement", @"Bike parking", @"Bike lane issue", @"Note this issue"];
     
-    
+    // Need to add descriptions for "Parks", "Obstructions to riding", and "Bicycle detection box"
     descriptionArray = @[@"Anything else we should map to help your fellow cyclists? Share the details.", @"Here’s a spot to fill your bottle on those hot summer days… stay hydrated, people. We need you.", @"Here's an access point under the tracks, through the park, onto a trail, or over a ravine.", @"Help us make cycling mainstream… here’s a place to refresh yourself before you re-enter the fashionable world of Atlanta.", @"Have a flat, a broken chain, or spongy brakes? Or do you need a bike to jump into this world of cycling in the first place? Here's a shop ready to help.", @"Park them here and remember to secure your bike well! Please only include racks or other objects intended for bikes.", @"Anything about this spot?", @"Here’s a spot where the road needs to be repaired (pothole, rough concrete, gravel in the road, manhole cover, sewer grate).", @"Here’s a signal that you can’t activate with your bike.", @"The bike lane is always blocked here, cars disobey \"no right on red\"… anything where the cops can help make cycling safer.", @"You need a bike rack to secure your bike here.", @"Where the bike lane ends (abruptly) or is too narrow (pesky parked cars).", @"Anything else ripe for improvement: want a sharrow, a sign, a bike lane? Share the details."];
     
     // Makes sure that the picker loads at index 6.
@@ -69,7 +71,7 @@
 // tell the picker how many rows are available for a given component
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return 12;
+    return 13;
 }
 
 // tell the picker how many components it will have
@@ -119,7 +121,7 @@
         index = 0;
         return assetView;
     }
-    else if(row >6)
+    else if(row > 6)
     {
         issueView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, issueView.frame.size.width - 50, 27)];
@@ -154,6 +156,16 @@
 
 -(IBAction)saveTapped:(id)sender
 {
+    
+    if(rowNum>=7)
+    {
+        rowNum = rowNum - 7;
+    }
+    else if(rowNum <= 5)
+    {
+        rowNum = 11 - rowNum;
+    }
+
     NSLog(@"Saved was tapped");
     if(index == 0)
     {
@@ -180,12 +192,16 @@
 //        }
 //        
 //        NSLog(@"tempType: %d", [tempType intValue]);
+        
+        
         NSNumber *tempNum = [NSNumber numberWithInt:rowNum];
-        
-        
-        
-        
+
         [delegate didPickNoteType:tempNum];
+        
+        
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [dateFormat setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
 
     }
     if(index == 1)
@@ -206,6 +222,12 @@
         
         [[NSUserDefaults standardUserDefaults] setInteger:rowNum forKey: @"pickedNotedType"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        NSNumber *tempNum = [NSNumber numberWithInt:rowNum];
+        
+        [delegate didPickNoteType:tempNum];
+        
+
         
         pickedNotedType = [[NSUserDefaults standardUserDefaults] integerForKey:@"pickedNotedType"];
         

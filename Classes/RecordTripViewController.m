@@ -59,6 +59,7 @@
 @synthesize recording, shouldUpdateCounter, userInfoSaved;
 @synthesize appDelegate;
 @synthesize saveActionSheet;
+@synthesize locationManager;
 
 #pragma mark CLLocationManagerDelegate methods
 
@@ -215,6 +216,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    if(IS_OS_8_OR_LATER)
+    {
+        [self.locationManager requestAlwaysAuthorization];
+        [self.locationManager requestWhenInUseAuthorization];
+    }
     
     NSLog(@"RecordTripViewController viewDidLoad");
     NSLog(@"Bundle ID: %@", [[NSBundle mainBundle] bundleIdentifier]);
@@ -598,7 +606,7 @@
 	if ( YES )
 	{
 		// Trip Purpose
-		NSLog(@"INIT + PUSH TripPurposePickerView");
+//		NSLog(@"INIT + PUSH TripPurposePickerView");
 //		PickerViewController *tripPurposePickerView = [[PickerViewController alloc]
 //													  //initWithPurpose:[tripManager getPurposeIndex]];
 //													  initWithNibName:@"TripPurposePicker" bundle:nil];
@@ -606,7 +614,7 @@
 //		//[self.navigationController presentModalViewController:tripPurposePickerView animated:YES];
 //        [self.navigationController pushViewController:tripPurposePickerView animated:YES];
 //        //[self.navigationController dismissViewControllerAnimated:YES completion:nil];
-        
+//        
         tripPurpVC = [[NewTripPurposeViewController alloc] init];
         [tripPurpVC setDelegate:self];
         [self.navigationController pushViewController:tripPurpVC animated:YES];
@@ -804,7 +812,6 @@
 	// only enable start button if we don't already have a pending trip
 	if ( timer == nil )
 		startButton.enabled = YES;
-	
 	startButton.hidden = NO;
 	
 	return purpose;
@@ -923,15 +930,15 @@ shouldSelectViewController:(UIViewController *)viewController
 	
 	NSMutableArray *mutableFetchResults = [[noteManager.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
     
-#warning causes crash
+//warning causes crash
     
-    //NSManagedObject *noteToDelete = [mutableFetchResults objectAtIndex:0];
-    //[noteManager.managedObjectContext deleteObject:noteToDelete];
+    NSManagedObject *noteToDelete = [mutableFetchResults objectAtIndex:0];
+    [noteManager.managedObjectContext deleteObject:noteToDelete];
     
-    //if (![noteManager.managedObjectContext save:&error]) {
+    if (![noteManager.managedObjectContext save:&error]) {
         // Handle the error.
         NSLog(@"Unresolved error %@", [error localizedDescription]);
-    //}
+    }
     
 
 }
@@ -994,11 +1001,7 @@ shouldSelectViewController:(UIViewController *)viewController
     NSLog(@"Save note");
 }
 
-
-
-
 #pragma mark RecordingInProgressDelegate method
-
 
 - (Trip *)getRecordingInProgress
 {
@@ -1016,8 +1019,6 @@ shouldSelectViewController:(UIViewController *)viewController
     self.recording = nil;
     self.shouldUpdateCounter = nil;
     self.userInfoSaved = nil;
-    
-    
     
 }
 
