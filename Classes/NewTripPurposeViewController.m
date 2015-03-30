@@ -97,27 +97,6 @@
         return tripPickView;
     }
     return nil;
-//    else if(row >6)
-//    {
-//        issueView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-//        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, issueView.frame.size.width - 50, 27)];
-//        titleLabel.text = [pickerCategories objectAtIndex:row];
-//        UIImageView *noteIssue = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"noteIssueMapGlyph.png"]];
-//        [noteIssue setFrame:CGRectMake(0, 10, 46, 27)];
-//        [issueView addSubview:titleLabel];
-//        [issueView addSubview:noteIssue];
-//        index = 1;
-//        return issueView;
-//    }
-//    else if(row == 6)
-//    {
-//        startView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-//        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(-140, 10, startView.frame.size.width, 27)];
-//        titleLabel.text = @"...";
-//        titleLabel.textAlignment = NSTextAlignmentCenter;
-//        [startView addSubview:titleLabel];
-//        return startView;
-//    }
 }
 
 
