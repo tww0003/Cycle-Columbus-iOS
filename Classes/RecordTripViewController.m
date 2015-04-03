@@ -659,6 +659,7 @@
     
     if (myLocation){
         [noteManager addLocation:myLocation];
+        //[noteManager setLocation:myLocation];
     }
 	
 	// go directly to TripPurpose, user can cancel from there
@@ -869,6 +870,69 @@ shouldSelectViewController:(UIViewController *)viewController
 #pragma mark TripPurposeDelegate methods
 
 
+-(void)resetTheSaveButtonAndStuff
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Trip" inManagedObjectContext:tripManager.managedObjectContext];
+    [request setEntity:entity];
+    
+    // configure sort order
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"start" ascending:NO];
+    NSSortDescriptor *sortDescriptorSaved = [[NSSortDescriptor alloc] initWithKey:@"saved" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, sortDescriptorSaved, nil];
+    [request setSortDescriptors:sortDescriptors];
+    
+    NSError *error;
+    NSInteger count = [tripManager.managedObjectContext countForFetchRequest:request error:&error];
+    NSLog(@"count = %ld", (long)count);
+    
+    NSMutableArray *mutableFetchResults = [[tripManager.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    
+    if([mutableFetchResults count] > 0)
+    {
+        NSManagedObject *tripToDelete = [mutableFetchResults objectAtIndex:0];
+        
+        if (tripManager.trip!= nil && tripManager.trip.saved == nil) {
+            [noteManager.managedObjectContext deleteObject:tripToDelete];
+        }
+        
+        
+        if (![tripManager.managedObjectContext save:&error]) {
+            // Handle the error.
+            NSLog(@"Unresolved error %@", [error localizedDescription]);
+        }
+        
+    }
+    //
+    else{
+        NSLog(@"There is nothing in NSManagedObject *tripToDelete = [mutableFetchResults objectAtIndex:0];");
+    }
+    // reset button states
+    appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.isRecording = NO;
+    recording = NO;
+    [[NSUserDefaults standardUserDefaults] setInteger:0 forKey: @"recording"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    startButton.enabled = YES;
+    UIImage *buttonImage = [[UIImage imageNamed:@"greenButton.png"]
+                            resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"greenButtonHighlight.png"]
+                                     resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+    
+    [startButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [startButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    [startButton setTitle:@"Start" forState:UIControlStateNormal];
+    
+    // reset trip, reminder managers
+    NSManagedObjectContext *context = tripManager.managedObjectContext;
+    [self initTripManager:[[TripManager alloc] initWithManagedObjectContext:context]];
+    tripManager.dirty = YES;
+    
+    [self resetCounter];
+    [self resetTimer];
+
+}
+
 - (NSString *)setPurpose:(unsigned int)index
 {
 	NSString *purpose = [tripManager setPurpose:index];
@@ -983,17 +1047,17 @@ shouldSelectViewController:(UIViewController *)viewController
 
 - (void)didSaveImage:(NSData *)imgData{
     [noteManager.note setImage_data:imgData];
-    NSLog(@"Added image, Size of Image(bytes):%d", [imgData length]);
+    NSLog(@"Added image, Size of Image(bytes):%lu", (unsigned long)[imgData length]);
 }
 
 - (void)getTripThumbnail:(NSData *)imgData{
     [tripManager.trip setThumbnail:imgData];
-    NSLog(@"Trip Thumbnail, Size of Image(bytes):%d", [imgData length]);
+    NSLog(@"Trip Thumbnail, Size of Image(bytes):%lu", (unsigned long)[imgData length]);
 }
 
 - (void)getNoteThumbnail:(NSData *)imgData{
     [noteManager.note setThumbnail:imgData];
-    NSLog(@"Note Thumbnail, Size of Image(bytes):%d", [imgData length]);
+    NSLog(@"Note Thumbnail, Size of Image(bytes):%lu", (unsigned long)[imgData length]);
 }
 
 - (void)saveNote{

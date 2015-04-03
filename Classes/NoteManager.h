@@ -55,6 +55,7 @@
 	NSMutableData *receivedDataNoted;
     NSString *deviceUniqueIdHash1;
     SavedNotesViewController *savedNotes;
+    CLLocation *tempLocation;
 }
 
 @property (nonatomic, strong) NSString *deviceUniqueIdHash1;
@@ -75,6 +76,7 @@
 - (void)addLocation:(CLLocation*)locationNow;
 - (id)initWithNote:(Note*)note;
 - (BOOL)loadNote:(Note *)note;
+-(void) setLocation: (CLLocation *)locationSet;
 
 @end
 

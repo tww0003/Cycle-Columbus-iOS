@@ -535,6 +535,14 @@
     NSString *avgCost = [formatter stringFromNumber:averageCost];
         
 	// NOTE: device hash added by SaveRequest initWithPostVars
+    // FOR WHOEVER HAS TO READ/MAINTAIN/MODIFY THIS CODE NEXT
+    // First off, I'm sorry.
+    // Secondly,
+    // This is what gets sent to the server. I can't tell you how much time
+    // I spent when I first dove into this project trying to figure out
+    // what was going on, but this dictionary contains all the data that will be zipped
+    // and uploaded to the server.
+    
 	NSDictionary *postVars = [NSDictionary dictionaryWithObjectsAndKeys:
 							  tripJson, @"coords",
 							  purpose, @"purpose",

@@ -103,6 +103,7 @@
 -(IBAction)cancelTapped:(id)sender
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
+    [delegate didCancelNote];
     NSLog(@"Cancel Tapped");
 }
 
@@ -116,6 +117,9 @@
     TripDetailViewController *tripDetailViewController = [[TripDetailViewController alloc] initWithNibName:@"TripDetailViewController" bundle:nil];
     tripDetailViewController.delegate = self.delegate;
     [delegate didPickPurpose:rowNum];
+    //[delegate saveTrip];
+    //[delegate resetTheSaveButtonAndStuff];
+
     
     //rowNum = [[NSUserDefaults standardUserDefaults] integerForKey:@"pickerCategory"];
     //[[NSUserDefaults standardUserDefaults] setInteger:rowNum forKey: @"pickerCategory"];

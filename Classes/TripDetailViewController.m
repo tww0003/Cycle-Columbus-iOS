@@ -86,6 +86,7 @@
     
     [delegate didEnterTripDetails:details];
     [delegate saveTrip];
+    [delegate resetTheSaveButtonAndStuff];
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }

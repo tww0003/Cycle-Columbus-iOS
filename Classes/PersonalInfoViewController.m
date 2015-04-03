@@ -170,6 +170,8 @@
 {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.translucent = NO;
+    
     infoVC = [[InformationViewController alloc] init];
     infoNav = [[UINavigationController alloc] initWithRootViewController:infoVC];
     
@@ -707,7 +709,11 @@
 			switch ([indexPath indexAtPosition:1])
 			{
 				case 0:
-					cell.textLabel.text = @"Getting started with Cycle Columbus";
+					cell.textLabel.text = @"Getting started with Fountain City Cycling";
+                    UIFont *myFont = [ UIFont fontWithName: @"Arial" size: 15.0 ];
+                    cell.textLabel.font = myFont;
+                    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+
 					break;
 			}
 			

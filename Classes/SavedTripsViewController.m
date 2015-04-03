@@ -165,7 +165,7 @@
 	
 	[self setTrips:mutableFetchResults];
 	[self.tableView reloadData];
-
+    self.tableView.showsVerticalScrollIndicator = NO;
 }
 
 
@@ -180,7 +180,8 @@
 	// Set up the buttons.
 	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-    
+    self.navigationItem.prompt = nil;
+    self.navigationController.navigationBar.translucent = NO;
     // no trip selection by default
 	selectedTrip = nil;
     
@@ -247,7 +248,7 @@
 		if ( selectedTrip )
 		{
 			MapViewController *mvc = [[MapViewController alloc] initWithTrip:selectedTrip];
-			[[self navigationController] pushViewController:mvc animated:YES];
+			[self.navigationController pushViewController:mvc animated:YES];
 			selectedTrip = nil;
 		}
 
@@ -385,13 +386,17 @@
         
         UILabel *CO2Text = [[UILabel alloc] init];
         CO2Text.frame = CGRectMake( 10, 50, 120, 20);
-        [CO2Text setFont:[UIFont systemFontOfSize:12]];
+        [CO2Text setFont:[UIFont systemFontOfSize:8]];
         [CO2Text setTextColor:[UIColor grayColor]];
         
         UILabel *CaloryText = [[UILabel alloc] init];
-        CaloryText.frame = CGRectMake( 140, 50, 190, 20);
-        [CaloryText setFont:[UIFont systemFontOfSize:12]];
+        CaloryText.frame = CGRectMake( 110, 50, 190, 20);
+        [CaloryText setFont:[UIFont systemFontOfSize:8]];
         [CaloryText setTextColor:[UIColor grayColor]];
+        
+        UILabel *moneySaved = [[UILabel alloc] initWithFrame:CGRectMake(225, 50, 120, 20)];
+        [moneySaved setFont:[UIFont systemFontOfSize:8]];
+        [moneySaved setTextColor:[UIColor grayColor]];
         
         UIImage	*image;
 
@@ -513,12 +518,24 @@
         else
             CaloryText.text = [NSString stringWithFormat:@"Calories Burned: %.1f kcal", calory];
         
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+        [formatter setMaximumFractionDigits:2];
+        [formatter setRoundingMode: NSNumberFormatterRoundUp];
+
+        NSNumber *iHateObjectiveC = @(.592);
+        NSNumber *averageCost = [NSNumber numberWithFloat:([iHateObjectiveC floatValue] * ([trip.distance floatValue] / 1609.344f))];
+        
+        NSString *moneySavedString = [formatter stringFromNumber:averageCost];
+        
+        moneySaved.text = [NSString stringWithFormat:@"Average Savings: $%@", moneySavedString];
         
         [cell.contentView addSubview:CaloryText];
         [cell.contentView addSubview:CO2Text];
         [cell.contentView addSubview:durationText];
         [cell.contentView addSubview:purposeText];
         [cell.contentView addSubview:timeText];
+        [cell.contentView addSubview:moneySaved];
         
         cell.editingAccessoryView = cell.accessoryView;
         
@@ -784,7 +801,6 @@
 
 	[tripManager setPurpose:index];
 }
-
 
 
 @end

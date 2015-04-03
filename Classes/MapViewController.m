@@ -115,7 +115,7 @@
 
 - (void)initInfoView
 {
-	infoView					= [[UIView alloc] initWithFrame:CGRectMake(0,0,320,560)];
+	infoView					= [[UIView alloc] initWithFrame:CGRectMake(0,64,320,560)];
 	infoView.alpha				= kInfoViewAlpha;
 	infoView.backgroundColor	= [UIColor blackColor];
 	
@@ -176,6 +176,14 @@
 		self.navigationItem.prompt = [NSString stringWithFormat:@"elapsed: %@ ~ %@",
  									  [inputFormatter stringFromDate:outputDate],
 									  [dateFormatter stringFromDate:[trip start]]];
+        self.navigationController.navigationBar.translucent = NO;
+
+        
+//        UILabel *navItemPromtLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
+//        navItemPromtLabel.text = [NSString stringWithFormat:@"elapsed: %@ ~ %@",
+//                                  [inputFormatter stringFromDate:outputDate],
+//                                  [dateFormatter stringFromDate:[trip start]]];
+        
         
 		self.title = [NSString stringWithFormat:@"%.1f mi ~ %.1f mph",
 					  [trip.distance doubleValue] / 1609.344,
@@ -394,6 +402,9 @@
     NSLog(@"Size: %f, %f", thumbnail.size.height, thumbnail.size.width);
     
     [delegate getTripThumbnail:thumbnailData];
+    
+    [self.navigationItem setPrompt:nil];
+
 }
 
 

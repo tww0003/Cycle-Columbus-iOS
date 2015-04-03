@@ -150,6 +150,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.translucent = NO;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -297,10 +298,10 @@
     NSString *title = [[NSString alloc] init] ;
     switch ([note.note_type intValue]) {
         case 0:
-            title = @"Pavement issue";
+            title = @"Obstructions to riding...";
             break;
         case 1:
-            title = @"Traffic signal";
+            title = @"Bicycle detection box";
             break;
         case 2:
             title = @"Enforcement";
@@ -331,6 +332,9 @@
             break;
         case 11:
             title = @"Note this asset";
+            break;
+        case 12:
+            title = @"Parks";
             break;
         default:
             break;
@@ -383,7 +387,7 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-	NSLog(@"actionSheet clickedButtonAtIndex %d", buttonIndex);
+	NSLog(@"actionSheet clickedButtonAtIndex %ld", (long)buttonIndex);
 	switch ( buttonIndex )
 	{
 		case 0:

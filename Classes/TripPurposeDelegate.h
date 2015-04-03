@@ -90,5 +90,6 @@
 - (void)getTripThumbnail:(NSData *)imgData;
 - (void)saveNote;
 - (void)saveTrip;
+-(void)resetTheSaveButtonAndStuff;
 
 @end

@@ -89,6 +89,10 @@
 	}
 }
 
+-(void) setLocation: (CLLocation *)locationSet
+{
+    //tempLocation = locationSet;
+}
 
 //called from RecordTripViewController
 - (void)addLocation:(CLLocation *)locationNow
@@ -130,6 +134,8 @@
 //called in DetailViewController once pressing skip or save
 - (void)saveNote
 {
+    //[self addLocation:tempLocation];
+    
     savedNotes = [[SavedNotesViewController alloc] init];
     
     NSMutableDictionary *noteDict;
