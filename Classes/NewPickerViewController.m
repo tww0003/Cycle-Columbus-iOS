@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    descriptionTextView.userInteractionEnabled = NO;
+    
     
     // All the categories of the picker. 0 - 6 should have a blue astric, 8 - 13 should have a red astric
     
@@ -30,7 +32,7 @@
     pickerCategories = @[@"Parks", @"Note this asset", @"Water fountains", @"Secret passage", @"Public restrooms", @"Bike Shops", @"Bike parking", @"...", @"Obsructions to riding...", @"Bicycle detection box", @"Enforcement", @"Bike parking", @"Bike lane issue", @"Note this issue"];
     
     // Need to add descriptions for "Parks", "Obstructions to riding", and "Bicycle detection box"
-    descriptionArray = @[@"Is there a park here? Mark it!", @"Anything else we should map to help your fellow cyclists? Share the details.", @"Here’s a spot to fill your bottle on those hot summer days… stay hydrated, people. We need you.", @"Here's an access point under the tracks, through the park, onto a trail, or over a ravine.", @"Help us make cycling mainstream… here’s a place to refresh yourself before you re-enter the fashionable world of Atlanta.", @"Have a flat, a broken chain, or spongy brakes? Or do you need a bike to jump into this world of cycling in the first place? Here's a shop ready to help.", @"Park them here and remember to secure your bike well! Please only include racks or other objects intended for bikes.", @"Anything about this spot?", @"Here’s a spot where the road needs to be repaired (pothole, rough concrete, gravel in the road, manhole cover, sewer grate).", @"Here’s a signal that you can’t activate with your bike.", @"The bike lane is always blocked here, cars disobey \"no right on red\"… anything where the cops can help make cycling safer.", @"You need a bike rack to secure your bike here.", @"Where the bike lane ends (abruptly) or is too narrow (pesky parked cars).", @"Anything else ripe for improvement: want a sharrow, a sign, a bike lane? Share the details."];
+    descriptionArray = @[@"Take a load off and enjoy the view or take a nice ride through the park! Either way, this is a great place to mark down.", @"Anything else we should map to help your fellow cyclists? Share the details.", @"Here’s a spot to fill your bottle on those hot summer days… stay hydrated, people. We need you.", @"Here's an access point under the tracks, through the park, onto a trail, or over a ravine.", @"Help us make cycling mainstream… here’s a place to refresh yourself before you re-enter the fashionable world of Atlanta.", @"Have a flat, a broken chain, or spongy brakes? Or do you need a bike to jump into this world of cycling in the first place? Here's a shop ready to help.", @"Park them here and remember to secure your bike well! Please only include racks or other objects intended for bikes.", @"Anything about this spot?", @"Here’s a spot where the road needs to be repaired (pothole, rough concrete, gravel in the road, manhole cover, sewer grate) or where a bike cannot travel.", @"Here's a signal that you can activate with your bike. Mark it down if it is damaged to bring attention to this issue.", @"The bike lane is always blocked here, cars disobey \"no right on red\"… anything where the cops can help make cycling safer.", @"You need a bike rack to secure your bike here.", @"Where the bike lane ends (abruptly) or is too narrow (pesky parked cars).", @"Anything else ripe for improvement: want a sharrow, a sign, a bike lane? Share the details."];
     
     // Makes sure that the picker loads at index 6.
     // The descriptionTextView needs to have it's text set.

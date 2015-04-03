@@ -13,11 +13,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="6288"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="6988"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="JUJ-6C-f66">
-                    <rect key="frame" x="0.0" y="-5" width="320" height="6293"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="6988"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro.png" id="O69-1w-jIA">
@@ -25,28 +25,21 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note-detail.png" id="Ruo-og-guF">
-                            <rect key="frame" x="57" y="4065" width="198" height="324"/>
+                            <rect key="frame" x="57" y="4247" width="198" height="324"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recording.png" id="Zpb-zw-jly">
-                            <rect key="frame" x="61" y="834" width="198" height="324"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings.png" id="Jmn-fN-DVw">
-                            <rect key="frame" x="57" y="5203" width="198" height="324"/>
+                            <rect key="frame" x="61" y="832" width="198" height="324"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note-list.png" id="Ajg-3i-21S">
-                            <rect key="frame" x="57" y="4800" width="198" height="324"/>
+                            <rect key="frame" x="57" y="5029" width="198" height="324"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R75-b5-fRf">
-                            <rect key="frame" x="3" y="8" width="314" height="42"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fountain City Cycling Instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R75-b5-fRf">
+                            <rect key="frame" x="-23" y="8" width="366" height="42"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <string key="text">Cycle Columbus Instructions
-
-</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -63,67 +56,67 @@ When you're ready to start recording your ride, tap "Start." </string>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Recording a ride" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DjH-Bj-8uU">
-                            <rect key="frame" x="8" y="750" width="304" height="44"/>
+                            <rect key="frame" x="8" y="755" width="304" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note-type.png" id="XlC-WX-zZ3">
-                            <rect key="frame" x="61" y="3260" width="198" height="324"/>
+                            <rect key="frame" x="61" y="3377" width="198" height="324"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip-type.png" id="kea-Xh-D6A">
-                            <rect key="frame" x="61" y="1635" width="198" height="324"/>
+                            <rect key="frame" x="61" y="1680" width="198" height="324"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip-map.png" id="ISf-0d-MnZ">
-                            <rect key="frame" x="61" y="2472" width="198" height="324"/>
+                            <rect key="frame" x="61" y="2536" width="198" height="324"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Z4i-G6-Ah3">
-                            <rect key="frame" x="8" y="1183" width="304" height="351"/>
+                            <rect key="frame" x="8" y="1220" width="304" height="351"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <mutableString key="text">When your ride is over, tap "Save." Confirm that your trip is done by tapping "Save" in the next pop-up. If you don't want to save the trip and upload the data - for whatever reason - simply choose "Discard." If you tap Save by accident and want to continue recording your current trip, choose "Continue".
 
-If you have switched to another app while recording your ride, you can get back to Cycle Columbus by selecting it from your Home Screen or from the App Switcher. If your battery goes below a 20% charge, Cycle Columbus will automatically stop recording and shut down.
+If you have switched to another app while recording your ride, you can get back to Fountain City Cycling by selecting it from your Home Screen or from the App Switcher. If your battery goes below a 20% charge, Fountain City Cycling will automatically stop recording and shut down.
 
 </mutableString>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Specifying the trip purpose" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ln5-kQ-6eC">
-                            <rect key="frame" x="0.0" y="1569" width="312" height="43"/>
+                            <rect key="frame" x="0.0" y="1604" width="312" height="43"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="EZH-Pg-O0N">
-                            <rect key="frame" x="8" y="1980" width="304" height="351"/>
+                            <rect key="frame" x="8" y="2068" width="304" height="351"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <mutableString key="text">Select a purpose on the "Trip Purpose" screen and tap "Save." We're interested in the MAIN purpose for each trip you make. If you're unsure how to categorize a trip, select "Other" from the Trip Purpose chooser. You can always include a comment before transmitting.
 
-Cycle Columbus will prompt you to enter comments or notes on the ride, which you can skip if you have none. It will then upload your ride data, notifying you when done. If there's a problem connecting to the server, it will prompt you to retry at another time.
+Fountain City Cycling will prompt you to enter comments or notes on the ride, which you can skip if you have none. It will then upload your ride data, notifying you when done. If there's a problem connecting to the server, it will prompt you to retry at another time.
 
 </mutableString>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Maps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UXk-B1-a4O">
-                            <rect key="frame" x="8" y="2394" width="304" height="51"/>
+                            <rect key="frame" x="8" y="2452" width="304" height="51"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="oeM-we-lsu">
-                            <rect key="frame" x="8" y="2831" width="304" height="351"/>
+                            <rect key="frame" x="8" y="2924" width="304" height="351"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <mutableString key="text">After your data is uploaded, Cycle Columbus displays the map of your ride, showing the route, distance travelled, and average speed.
+                            <mutableString key="text">After your data is uploaded, Fountain City Cycling displays the map of your ride, showing the route, distance travelled, and average speed.
 
 Tap "My Trips" on the tab-bar at the bottom of the screen to show a list of all your rides, including dates, times, mileage, CO2 saved, and calories burned. Tap on a trip to display its map. Share the map with others by taking a screenshot (press Sleep/wake and Home simultaneously), and sending it via email or downloading it to your computer. Hint: you can zoom in or out on the map. Tap "Edit" on the trip list to delete a trip.
 
@@ -132,14 +125,14 @@ Tap "My Trips" on the tab-bar at the bottom of the screen to show a list of all 
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dqV-mg-AOi">
-                            <rect key="frame" x="8" y="3216" width="304" height="36"/>
+                            <rect key="frame" x="8" y="3308" width="304" height="36"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="0Bm-Fu-zbQ">
-                            <rect key="frame" x="8" y="3604" width="304" height="384"/>
+                            <rect key="frame" x="8" y="3765" width="304" height="384"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <string key="text">Do you know of an asset that will help other cyclists along your route - such as good bike parking, a water fountain, or a secret passage to cut through? Or have you noticed an issue you'd like to see addressed - such as a traffic signal that won't change or a problem with a bike lane? Tap on "Note this" and choose the issue or assets from the pop-up and then tap "Save".
@@ -151,14 +144,14 @@ If none of the options fit your observation, choose "Note this asset" or "Note t
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5. Note Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ABR-mw-AH2">
-                            <rect key="frame" x="8" y="4025" width="304" height="32"/>
+                            <rect key="frame" x="8" y="4182" width="304" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1ZD-g7-gCi">
-                            <rect key="frame" x="36" y="4424" width="240" height="284"/>
+                            <rect key="frame" x="36" y="4635" width="240" height="284"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <string key="text">You can add an optional photo or additional details for each issue and asset, or skip either one and just tap "Save" to upload your note.
@@ -170,40 +163,54 @@ Tap "Add photo" to open the camera and take a photo of the issue or asset. You c
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6. My Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ikb-vf-hUT">
-                            <rect key="frame" x="8" y="4748" width="304" height="44"/>
+                            <rect key="frame" x="8" y="4952" width="304" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="law-Ln-8cp">
+                            <rect key="frame" x="40" y="5417" width="240" height="234"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <string key="text">Tap "My Notes" on the tab-bar at the bottom of the screen to show a list of all your assets (in blue) and issues (in red), with dates and times.
+
+Tap on a note to display its map. You can then tap the "i" for Info to see the picture and additional details, if any, that you entered for this note. Tap "Edit" on the top of the "My Notes" page to delete a note.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings.png" id="Jmn-fN-DVw">
+                            <rect key="frame" x="57" y="5756" width="198" height="324"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7. Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="itt-I8-uvB">
-                            <rect key="frame" x="8" y="5156" width="304" height="39"/>
+                            <rect key="frame" x="8" y="5684" width="304" height="39"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="bQL-BB-QM1">
-                            <rect key="frame" x="40" y="5562" width="240" height="317"/>
+                            <rect key="frame" x="40" y="6144" width="240" height="317"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <string key="text">Entering personal info is completely optional and confidential, and, if you choose to participate, only has to be done once. It involves a few basic questions useful to our study. If you wish to give us your email address, the City of Columbus or Auburn University may contact you directly about your experience using Cycle Columbus or bicycling in the city. Tap "Save" when finished.
+                            <string key="text">Entering personal info is completely optional and confidential, and, if you choose to participate, only has to be done once. It involves a few basic questions useful to our study. If you wish to give us your email address, the City of Columbus may contact you directly about your experience using Fountain City Cycling or bicycling in the city. Tap "Save" when finished.
 
-This Help menu is available from "Getting started with Cycle Columbus".
+This Help menu is available from "Getting started with Fountain City Cycling".
 
 </string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps to make sure Cycle Columbus works properly" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2RW-mR-n5S">
-                            <rect key="frame" x="8" y="5945" width="304" height="73"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps to make sure Fountain City Cycling works properly" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2RW-mR-n5S">
+                            <rect key="frame" x="8" y="6494" width="304" height="73"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Y4y-xZ-Vxh">
-                            <rect key="frame" x="36" y="6039" width="244" height="234"/>
+                            <rect key="frame" x="36" y="6600" width="244" height="234"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <string key="text">For your own safety, please do not listen to music with your headphones, talk on the phone, or look at the screen while cycling. Please pull over before reporting an asset or issue on your trip.
@@ -222,7 +229,7 @@ Be sure to enable Location in your phone's Settings. (From the Home page, go to 
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="383" y="1127"/>
+            <point key="canvasLocation" x="253" y="-649"/>
         </view>
     </objects>
     <resources>

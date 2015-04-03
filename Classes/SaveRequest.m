@@ -62,7 +62,8 @@
 		self.deviceUniqueIdHash = delegate.uniqueIDHash;
         
         self.postVars = [NSMutableDictionary dictionaryWithDictionary:inPostVars];
-        [postVars setObject:deviceUniqueIdHash forKey:@"device"];
+        //[postVars setObject:deviceUniqueIdHash forKey:@"device"];
+        [postVars setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"deviceIDbased"] forKey:@"device"];
         
         if (type == 3) {
             [request setValue:@"3" forHTTPHeaderField:@"Cycleatl-Protocol-Version"];
@@ -92,7 +93,8 @@
             if (imageData.length > 0) {
                 NSLog(@"there's an image");
                 [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-                [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"%@.jpg\"\r\n", deviceUniqueIdHash] dataUsingEncoding:NSUTF8StringEncoding]];
+                //[body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"%@.jpg\"\r\n", deviceUniqueIdHash] dataUsingEncoding:NSUTF8StringEncoding]];
+                [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"%@.jpg\"\r\n", [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceIDbased"]] dataUsingEncoding:NSUTF8StringEncoding]];
                 [body appendData:[@"Content-Type: image/jpeg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
                 [body appendData:imageData];
                 [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];

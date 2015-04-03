@@ -406,7 +406,7 @@
 	
 	NSError *error;
 	NSInteger count = [tripManager.managedObjectContext countForFetchRequest:request error:&error];
-	NSLog(@"count = %d", count);
+	NSLog(@"count = %ld", (long)count);
 	
 	NSMutableArray *mutableFetchResults = [[tripManager.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
     
@@ -464,7 +464,7 @@
 //- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-	NSLog(@"actionSheet clickedButtonAtIndex %d", buttonIndex);
+	NSLog(@"actionSheet clickedButtonAtIndex %ld", (long)buttonIndex);
 	switch ( buttonIndex )
 	{			
        case 0:

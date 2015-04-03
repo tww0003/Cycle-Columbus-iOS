@@ -23,6 +23,10 @@
 @property (nonatomic, strong) NSSet *coords;
 @property (nonatomic, strong) NSData * thumbnail;
 @property (nonatomic, strong) User *user;
+@property (nonatomic, strong) NSString *speed;
+@property (nonatomic, strong) NSString *kCal;
+
+
 @end
 
 @interface Trip (CoreDataGeneratedAccessors)

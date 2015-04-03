@@ -27,7 +27,7 @@
     self.navigationController.navigationBar.translucent = NO;
     
     scrollView.scrollEnabled = YES;
-    scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 12250);
+    scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 13300);
     [self.view addSubview:scrollView];
     
 }

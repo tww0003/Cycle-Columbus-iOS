@@ -62,7 +62,7 @@
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey: @"pickerCategory"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    NSLog(@"picker category = %i", pickerCategory);
+    NSLog(@"picker category = %li", (long)pickerCategory);
     details = @"";
     
     [delegate didEnterTripDetails:details];
@@ -80,7 +80,7 @@
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey: @"pickerCategory"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    NSLog(@"picker category = %i", pickerCategory);
+    NSLog(@"picker category = %li", (long)pickerCategory);
     
     details = detailTextView.text;
     

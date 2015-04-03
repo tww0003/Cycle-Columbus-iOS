@@ -366,7 +366,7 @@
     
     savedTrips = [[SavedTripsViewController alloc] init];
     
-    NSLog(@"about to save trip with %d coords...", [coords count]);
+    NSLog(@"about to save trip with %lu coords...", (unsigned long)[coords count]);
 	// close out Trip record
 	// NOTE: this code assumes we're saving the current recording in progress
 	
@@ -390,6 +390,9 @@
 		NSTimeInterval duration = [last.recorded timeIntervalSinceDate:first.recorded];
 		NSLog(@"duration = %.0fs", duration);
 		[trip setDuration:[NSNumber numberWithDouble:duration]];
+        
+        //NSString *kcal = [NSString stringWithFormat:@"%f", 49 * [trip.distance doubleValue] / 1609.344 - 1.69];
+        //[trip setKCal:kcal];
 	}
 	
 	[trip setSaved:[NSDate date]];
@@ -467,7 +470,7 @@
 		NSString *newDateString = [outputFormatter stringFromDate:coord.recorded];
 		[coordsDict setValue:newDateString forKey:@"recorded"];		
 		[tripDict setValue:coordsDict forKey:newDateString];
-	}    
+	}
 #endif
 	// get trip purpose
 	NSString *purpose;
@@ -499,7 +502,37 @@
     NSData *tripJsonData = [NSJSONSerialization dataWithJSONObject:tripDict options:0 error:&writeError];
     NSString *tripJson = [[NSString alloc] initWithData:tripJsonData encoding:NSUTF8StringEncoding];
     //NSLog(@"trip data %@", tripJson);
+    
+    
+    // Formula for kCal
+    double formala = 49 * [trip.distance doubleValue] / 1609.344 - 1.69;
+    // Making sure it isn't negative
+    if(formala < 0)
+    {
+        formala = 0;
+    }
+    
+    // We want formala (yes, I know I spelt it wrong, but I'm no professional speller. damn.) to be one decimal point.
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setMaximumFractionDigits:1];
+    [formatter setRoundingMode: NSNumberFormatterRoundUp];
 
+    NSString *kcal = [formatter stringFromNumber:[NSNumber numberWithDouble:formala]];
+    NSString *coTwo = [NSString stringWithFormat:@"CO2 Saved: %.1f lbs", 0.93 * [trip.distance doubleValue] / 1609.344];
+   // NSString *distanced = [NSString stringWithFormat:@"%f", (distance * .0006212f)];
+    NSString *distanced = [NSString stringWithFormat:@"%f", [trip.distance doubleValue] / 1609.344];
+
+    
+    NSNumber *iHateObjectiveC = @(.592);
+    //NSNumber *averageCost = [NSNumber numberWithFloat:([iHateObjectiveC floatValue] * (distance * .0006212f))];
+    NSNumber *averageCost = [NSNumber numberWithFloat:([iHateObjectiveC floatValue] * ([trip.distance floatValue] / 1609.344f))];
+    
+    // Changing the rounding to 2 places for average cost.
+    [formatter setMaximumFractionDigits:2];
+
+    // 2 decimal places
+    NSString *avgCost = [formatter stringFromNumber:averageCost];
         
 	// NOTE: device hash added by SaveRequest initWithPostVars
 	NSDictionary *postVars = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -510,6 +543,10 @@
 							  userJson, @"user",
                               
 							  [NSString stringWithFormat:@"%d", kSaveProtocolVersion], @"version",
+                              kcal, @"kcal",
+                              avgCost, @"avgcost",
+                              distanced, @"distance",
+                              coTwo, @"cotwo",
 							  nil];
 	// create save request
 	SaveRequest *saveRequest = [[SaveRequest alloc] initWithPostVars:postVars with:3 image:NULL];
@@ -531,7 +568,6 @@
      else
      {
          // inform the user that the download could not be made
-     
      }
 }
 
@@ -542,8 +578,8 @@
 - (void)connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten 
  totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 {
-	NSLog(@"%d bytesWritten, %d totalBytesWritten, %d totalBytesExpectedToWrite",
-		  bytesWritten, totalBytesWritten, totalBytesExpectedToWrite );
+	NSLog(@"%ld bytesWritten, %ld totalBytesWritten, %ld totalBytesExpectedToWrite",
+		  (long)bytesWritten, (long)totalBytesWritten, (long)totalBytesExpectedToWrite );
 }
 
 
@@ -625,7 +661,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
 	// do something with the data
-    NSLog(@"+++++++DEBUG: Received %d bytes of data", [receivedData length]);
+    NSLog(@"+++++++DEBUG: Received %lu bytes of data", (unsigned long)[receivedData length]);
 	NSLog(@"%@", [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding] );
 
     // release the connection, and the data object
@@ -634,7 +670,7 @@
 
 - (NSInteger)getPurposeIndex
 {
-	NSLog(@"%d", purposeIndex);
+	NSLog(@"%ld", (long)purposeIndex);
 	return purposeIndex;
 }
 
@@ -733,7 +769,7 @@
  totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 {
 	if ( saving )
-		saving.message = [NSString stringWithFormat:@"Sent %d of %d bytes", totalBytesWritten, totalBytesExpectedToWrite];
+		saving.message = [NSString stringWithFormat:@"Sent %ld of %ld bytes", (long)totalBytesWritten, (long)totalBytesExpectedToWrite];
 }
 
 
@@ -764,7 +800,7 @@
 	
 	NSError *error;
 	NSInteger count = [managedObjectContext countForFetchRequest:request error:&error];
-	NSLog(@"countUnSavedTrips = %d", count);
+	NSLog(@"countUnSavedTrips = %ld", (long)count);
 	
 	return count;
 }
@@ -786,7 +822,7 @@
 	
 	NSError *error;
 	NSInteger count = [managedObjectContext countForFetchRequest:request error:&error];
-	NSLog(@"countUnSyncedTrips = %d", count);
+	NSLog(@"countUnSyncedTrips = %ld", (long)count);
 	
 	return count;
 }
@@ -808,7 +844,7 @@
 	
 	NSError *error;
 	NSInteger count = [managedObjectContext countForFetchRequest:request error:&error];
-	NSLog(@"countZeroDistanceTrips = %d", count);
+	NSLog(@"countZeroDistanceTrips = %ld", (long)count);
 	
 	return count;
 }
@@ -861,7 +897,7 @@
 	// filter coords by hAccuracy
 	NSPredicate *filterByAccuracy	= [NSPredicate predicateWithFormat:@"hAccuracy < 100.0"];
 	NSArray		*filteredCoords		= [[_trip.coords allObjects] filteredArrayUsingPredicate:filterByAccuracy];
-	NSLog(@"count of filtered coords = %d", [filteredCoords count]);
+	NSLog(@"count of filtered coords = %lu", (unsigned long)[filteredCoords count]);
 	
 	if ( [filteredCoords count] )
 	{

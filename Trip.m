@@ -23,5 +23,7 @@
 @dynamic coords;
 @dynamic thumbnail;
 @dynamic user;
+@dynamic speed;
+@dynamic kCal;
 
 @end

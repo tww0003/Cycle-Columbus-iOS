@@ -111,7 +111,7 @@
     BOOL noNewData = true;
     NSMutableArray *tripsToLoad = [[NSMutableArray alloc] init];
     NSMutableArray *notesToLoad = [[NSMutableArray alloc] init];
-    NSLog(@"Total number of trips: %d", [tripsDict count]);
+    NSLog(@"Total number of trips: %lu", (unsigned long)[tripsDict count]);
     
     //see if any fetched trips are already saved
     for(NSDictionary *newTrip in tripsDict){
@@ -155,8 +155,8 @@
     }
     else{
         [self.downloadingProgressView setVisible:TRUE messageString:kFetchTitle];
-        NSLog(@"Number of trips to download: %d", [tripsToLoad count]);
-        NSLog(@"Number of notes to downlaod: %d", [notesToLoad count]);
+        NSLog(@"Number of trips to download: %lu", (unsigned long)[tripsToLoad count]);
+        NSLog(@"Number of notes to downlaod: %lu", (unsigned long)[notesToLoad count]);
         //get the note data
         FetchNoteData *fetchNote = [[FetchNoteData alloc] initWithDataCountAndProgessView:[tripsToLoad count]+[notesToLoad count] progressView:self.downloadingProgressView];
         [fetchNote fetchWithNotes:notesToLoad];
@@ -182,8 +182,11 @@
     NSLog(@"start downloading");
     NSLog(@"DeviceUniqueIdHash: %@", deviceUniqueIdHash);
     
+    //NSDictionary *fetchDict = [NSDictionary dictionaryWithObjectsAndKeys:
+      //                         @"get_user_and_data", @"t", deviceUniqueIdHash, @"d", nil];
     NSDictionary *fetchDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                               @"get_user_and_data", @"t", deviceUniqueIdHash, @"d", nil];
+                               @"get_user_and_data", @"t", [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceIDbased"], @"d", nil];
+
     
     NSMutableString *postBody = [NSMutableString string];
     NSString *sep = @"";
@@ -225,7 +228,7 @@
 - (void)connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten
  totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 {
-	NSLog(@"%d bytesWritten, %d totalBytesWritten, %d totalBytesExpectedToWrite",
+	NSLog(@"%lu bytesWritten, %lu totalBytesWritten, %lu totalBytesExpectedToWrite",
 		  bytesWritten, totalBytesWritten, totalBytesExpectedToWrite );
 }
 
@@ -299,7 +302,7 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSLog(@"+++++++DEBUG: Received %d bytes of data", [receivedData length]);
+    NSLog(@"+++++++DEBUG: Received %lu bytes of data", [receivedData length]);
     NSError *error;
     NSString *jsonString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     NSLog(@"JSON string: %@", jsonString);

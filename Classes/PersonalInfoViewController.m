@@ -604,7 +604,7 @@
 			return @"How long have you been a cyclist?";
 			break;
         case 6:
-			return @"Are you missing trips you saved in an earlier version of Cycle Columbus (or if you had to re-install the app for any reason)? ";
+			return @"Did you accidently delete a trip or two? Download them to get them back!";
 			break;
 	}
     return nil;

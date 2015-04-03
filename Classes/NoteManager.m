@@ -167,7 +167,9 @@
         note.image_url =@"";
     }
     else {
-        note.image_url = [NSString stringWithFormat:@"%@-%@-type-%@",deviceUniqueIdHash1,newDateStringURL,note.note_type];
+        //note.image_url = [NSString stringWithFormat:@"%@-%@-type-%@",deviceUniqueIdHash1,newDateStringURL,note.note_type];
+        note.image_url = [NSString stringWithFormat:@"%@-%@-type-%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"deviceIDbased"],newDateStringURL,note.note_type];
+
     }
     NSLog(@"img_url: %@", note.image_url);
     
@@ -274,7 +276,9 @@
         _note.image_url =@"";
     }
     else {
-        _note.image_url = [NSString stringWithFormat:@"%@-%@-type-%@",deviceUniqueIdHash1,newDateStringURL,_note.note_type];
+        //_note.image_url = [NSString stringWithFormat:@"%@-%@-type-%@",deviceUniqueIdHash1,newDateStringURL,_note.note_type];
+        _note.image_url = [NSString stringWithFormat:@"%@-%@-type-%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"deviceIDbased"],newDateStringURL,_note.note_type];
+
     }
     NSLog(@"note_type: %d", [_note.note_type intValue]);
     NSLog(@"img_url: %@", _note.image_url);

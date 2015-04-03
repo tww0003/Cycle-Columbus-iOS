@@ -72,6 +72,34 @@
     // init our unique ID hash
 	[self initUniqueIDHash];
     
+    if(![[NSUserDefaults standardUserDefaults] objectForKey:@"deviceIDbased"])
+    {
+        long long rangeLow = 000000000000000000;
+        long long rangeHigh = 999999999999999999;
+        long long randomNumber = arc4random() % (rangeHigh-rangeLow+1) + rangeLow;
+        
+        NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+        NSMutableString *randomString = [NSMutableString stringWithCapacity: 32];
+        
+        for (int i = 0; i < 32; i++) {
+            [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform((long long *)[letters length])]];
+        }
+
+        
+        NSString *deviceIDString = @"iOS-DeviceID--";
+        NSString *numberThatIsRandom = [NSString stringWithFormat:@"%lld", randomNumber];
+        
+        deviceIDString = [deviceIDString stringByAppendingString:numberThatIsRandom];
+        
+        NSLog(@"%lu", (unsigned long)[deviceIDString length]);
+        
+        [[NSUserDefaults standardUserDefaults] setObject:randomString forKey:@"deviceIDbased"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+
+    
     self.storeLoadingView = [ProgressView progressViewInView: self.storeLoadingView messageString:nil progressTypePlain:NO] ;
     [window addSubview:self.storeLoadingView];
     
