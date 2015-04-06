@@ -27,11 +27,11 @@
 	<key>CFBundleSignature</key>
 	<string>CAGT</string>
 	<key>CFBundleVersion</key>
-	<string>1.03</string>
+	<string>1.05</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Cycle Columbus would like to use your location while it is in use.</string>
+	<string>Fountain City Cycling would like to use your location while it is in use.</string>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
 	<key>UIBackgroundModes</key>

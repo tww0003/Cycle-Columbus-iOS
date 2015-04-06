@@ -20,19 +20,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="6988"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro.png" id="O69-1w-jIA">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_3369.PNG" id="O69-1w-jIA">
                             <rect key="frame" x="61" y="83" width="198" height="324"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note-detail.png" id="Ruo-og-guF">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_3374.PNG" id="Ruo-og-guF">
                             <rect key="frame" x="57" y="4247" width="198" height="324"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recording.png" id="Zpb-zw-jly">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_3370.PNG" id="Zpb-zw-jly">
                             <rect key="frame" x="61" y="832" width="198" height="324"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note-list.png" id="Ajg-3i-21S">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_3375.PNG" id="Ajg-3i-21S">
                             <rect key="frame" x="57" y="5029" width="198" height="324"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -62,15 +62,15 @@ When you're ready to start recording your ride, tap "Start." </string>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note-type.png" id="XlC-WX-zZ3">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_3373.PNG" id="XlC-WX-zZ3">
                             <rect key="frame" x="61" y="3377" width="198" height="324"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip-type.png" id="kea-Xh-D6A">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_3371.PNG" id="kea-Xh-D6A">
                             <rect key="frame" x="61" y="1680" width="198" height="324"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip-map.png" id="ISf-0d-MnZ">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_3372.PNG" id="ISf-0d-MnZ">
                             <rect key="frame" x="61" y="2536" width="198" height="324"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -78,11 +78,11 @@ When you're ready to start recording your ride, tap "Start." </string>
                             <rect key="frame" x="8" y="1220" width="304" height="351"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <mutableString key="text">When your ride is over, tap "Save." Confirm that your trip is done by tapping "Save" in the next pop-up. If you don't want to save the trip and upload the data - for whatever reason - simply choose "Discard." If you tap Save by accident and want to continue recording your current trip, choose "Continue".
+                            <string key="text">When your ride is over, tap "Save." Confirm that your trip is done by tapping "Save" in the next pop-up. If you don't want to save the trip and upload the data - for whatever reason - simply choose "Discard." If you tap Save by accident and want to continue recording your current trip, choose "Continue".
 
 If you have switched to another app while recording your ride, you can get back to Fountain City Cycling by selecting it from your Home Screen or from the App Switcher. If your battery goes below a 20% charge, Fountain City Cycling will automatically stop recording and shut down.
 
-</mutableString>
+</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -97,11 +97,11 @@ If you have switched to another app while recording your ride, you can get back 
                             <rect key="frame" x="8" y="2068" width="304" height="351"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <mutableString key="text">Select a purpose on the "Trip Purpose" screen and tap "Save." We're interested in the MAIN purpose for each trip you make. If you're unsure how to categorize a trip, select "Other" from the Trip Purpose chooser. You can always include a comment before transmitting.
+                            <string key="text">Select a purpose on the "Trip Purpose" screen and tap "Save." We're interested in the MAIN purpose for each trip you make. If you're unsure how to categorize a trip, select "Other" from the Trip Purpose chooser. You can always include a comment before transmitting.
 
 Fountain City Cycling will prompt you to enter comments or notes on the ride, which you can skip if you have none. It will then upload your ride data, notifying you when done. If there's a problem connecting to the server, it will prompt you to retry at another time.
 
-</mutableString>
+</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -116,11 +116,11 @@ Fountain City Cycling will prompt you to enter comments or notes on the ride, wh
                             <rect key="frame" x="8" y="2924" width="304" height="351"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <mutableString key="text">After your data is uploaded, Fountain City Cycling displays the map of your ride, showing the route, distance travelled, and average speed.
+                            <string key="text">After your data is uploaded, Fountain City Cycling displays the map of your ride, showing the route, distance travelled, and average speed.
 
 Tap "My Trips" on the tab-bar at the bottom of the screen to show a list of all your rides, including dates, times, mileage, CO2 saved, and calories burned. Tap on a trip to display its map. Share the map with others by taking a screenshot (press Sleep/wake and Home simultaneously), and sending it via email or downloading it to your computer. Hint: you can zoom in or out on the map. Tap "Edit" on the trip list to delete a trip.
 
-</mutableString>
+</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -179,7 +179,7 @@ Tap on a note to display its map. You can then tap the "i" for Info to see the p
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings.png" id="Jmn-fN-DVw">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_3376.PNG" id="Jmn-fN-DVw">
                             <rect key="frame" x="57" y="5756" width="198" height="324"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -233,14 +233,14 @@ Be sure to enable Location in your phone's Settings. (From the Home page, go to 
         </view>
     </objects>
     <resources>
-        <image name="intro.png" width="640" height="960"/>
-        <image name="note-detail.png" width="640" height="960"/>
-        <image name="note-list.png" width="320" height="480"/>
-        <image name="note-type.png" width="640" height="960"/>
-        <image name="recording.png" width="640" height="960"/>
-        <image name="settings.png" width="640" height="960"/>
-        <image name="trip-map.png" width="640" height="960"/>
-        <image name="trip-type.png" width="640" height="960"/>
+        <image name="IMG_3369.PNG" width="1242" height="2208"/>
+        <image name="IMG_3370.PNG" width="1242" height="2208"/>
+        <image name="IMG_3371.PNG" width="1242" height="2208"/>
+        <image name="IMG_3372.PNG" width="1242" height="2208"/>
+        <image name="IMG_3373.PNG" width="1242" height="2208"/>
+        <image name="IMG_3374.PNG" width="1242" height="2208"/>
+        <image name="IMG_3375.PNG" width="1242" height="2208"/>
+        <image name="IMG_3376.PNG" width="1242" height="2208"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

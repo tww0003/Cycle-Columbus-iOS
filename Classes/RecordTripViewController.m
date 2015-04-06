@@ -657,9 +657,9 @@
     
     NSLog(@"Note This");
     
+
     if (myLocation){
         [noteManager addLocation:myLocation];
-        //[noteManager setLocation:myLocation];
     }
 	
 	// go directly to TripPurpose, user can cancel from there
@@ -677,8 +677,11 @@
 //		//[self.navigationController presentModalViewController:notePickerView animated:YES];
 //        [self.navigationController presentViewController:notePickerView animated:YES completion:nil];
         
+        
         pickerVC = [[NewPickerViewController alloc] init];
         [pickerVC setDelegate:self];
+        pickerVC.myLocation = myLocation;
+
         [self.navigationController presentViewController:pickerVC animated:YES completion:nil];
         
         //add location information

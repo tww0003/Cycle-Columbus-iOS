@@ -11,6 +11,8 @@
 //  of a bug, so I figured it'd be easier to just rewrite it.
 
 #import "NewPickerViewController.h"
+#import "NoteManager.h"
+#import "SavedNotesViewController.h"
 
 @interface NewPickerViewController ()
 
@@ -22,7 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    saveNotes = [[SavedNotesViewController alloc] init];
+
     descriptionTextView.userInteractionEnabled = NO;
     
     
@@ -152,8 +155,19 @@
 
 -(IBAction)cancelTapped:(id)sender
 {
+    
+    //[saveNotes deleteUselessNote];
+    saveNotes.shouldNoteDelete = @"YES";
+    [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"shouldNoteDelete"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self dismissViewControllerAnimated:YES completion:nil];
     NSLog(@"Cancel Tapped");
+}
+
+
+-(void)setLocation: (CLLocation *) theLocation
+{
+    myLocation = theLocation;
 }
 
 -(IBAction)saveTapped:(id)sender
@@ -167,6 +181,14 @@
     {
         rowNum = 12 - rowNum;
     }
+    
+//    if (myLocation){
+//        
+//        NoteManager *noteManager = [[NoteManager alloc] init];
+//        [noteManager addLocation:myLocation];
+//        //[noteManager setLocation:myLocation];
+//    }
+
 
     NSLog(@"Saved was tapped");
     if(index == 0)

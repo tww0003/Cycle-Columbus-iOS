@@ -177,6 +177,14 @@
 		9D8A1BB2171B03E900509FBD /* FetchTripData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A1BB1171B03E900509FBD /* FetchTripData.m */; };
 		9DD65FBB16FEA3CC00F2EB63 /* ImageResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD65FBA16FEA3CC00F2EB63 /* ImageResize.m */; };
 		9DF4254D17590D820030759A /* FetchNoteData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4254C17590D820030759A /* FetchNoteData.m */; };
+		DD5799B81AD3016900AF22A3 /* IMG_3369.PNG in Resources */ = {isa = PBXBuildFile; fileRef = DD5799B01AD3016900AF22A3 /* IMG_3369.PNG */; };
+		DD5799B91AD3016900AF22A3 /* IMG_3370.PNG in Resources */ = {isa = PBXBuildFile; fileRef = DD5799B11AD3016900AF22A3 /* IMG_3370.PNG */; };
+		DD5799BA1AD3016900AF22A3 /* IMG_3371.PNG in Resources */ = {isa = PBXBuildFile; fileRef = DD5799B21AD3016900AF22A3 /* IMG_3371.PNG */; };
+		DD5799BB1AD3016900AF22A3 /* IMG_3372.PNG in Resources */ = {isa = PBXBuildFile; fileRef = DD5799B31AD3016900AF22A3 /* IMG_3372.PNG */; };
+		DD5799BC1AD3016900AF22A3 /* IMG_3373.PNG in Resources */ = {isa = PBXBuildFile; fileRef = DD5799B41AD3016900AF22A3 /* IMG_3373.PNG */; };
+		DD5799BD1AD3016900AF22A3 /* IMG_3374.PNG in Resources */ = {isa = PBXBuildFile; fileRef = DD5799B51AD3016900AF22A3 /* IMG_3374.PNG */; };
+		DD5799BE1AD3016900AF22A3 /* IMG_3375.PNG in Resources */ = {isa = PBXBuildFile; fileRef = DD5799B61AD3016900AF22A3 /* IMG_3375.PNG */; };
+		DD5799BF1AD3016900AF22A3 /* IMG_3376.PNG in Resources */ = {isa = PBXBuildFile; fileRef = DD5799B71AD3016900AF22A3 /* IMG_3376.PNG */; };
 		DD661F991ABF442F0004168B /* NewPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD661F971ABF442F0004168B /* NewPickerViewController.m */; };
 		DD661F9A1ABF442F0004168B /* NewPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD661F981ABF442F0004168B /* NewPickerViewController.xib */; };
 		DD661F9E1ABF72400004168B /* NewTripPurposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD661F9C1ABF72400004168B /* NewTripPurposeViewController.m */; };
@@ -214,7 +222,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* CycleAtlantaAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleAtlantaAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* CycleAtlantaAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleAtlantaAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* Cycle Columbus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cycle Columbus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Fountain City Cycling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fountain City Cycling.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28D801B30F44B63D00FB423F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -424,6 +432,14 @@
 		9DD65FBA16FEA3CC00F2EB63 /* ImageResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResize.m; sourceTree = "<group>"; };
 		9DF4254B17590D820030759A /* FetchNoteData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchNoteData.h; sourceTree = "<group>"; };
 		9DF4254C17590D820030759A /* FetchNoteData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchNoteData.m; sourceTree = "<group>"; };
+		DD5799B01AD3016900AF22A3 /* IMG_3369.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_3369.PNG; path = Images/IMG_3369.PNG; sourceTree = "<group>"; };
+		DD5799B11AD3016900AF22A3 /* IMG_3370.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_3370.PNG; path = Images/IMG_3370.PNG; sourceTree = "<group>"; };
+		DD5799B21AD3016900AF22A3 /* IMG_3371.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_3371.PNG; path = Images/IMG_3371.PNG; sourceTree = "<group>"; };
+		DD5799B31AD3016900AF22A3 /* IMG_3372.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_3372.PNG; path = Images/IMG_3372.PNG; sourceTree = "<group>"; };
+		DD5799B41AD3016900AF22A3 /* IMG_3373.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_3373.PNG; path = Images/IMG_3373.PNG; sourceTree = "<group>"; };
+		DD5799B51AD3016900AF22A3 /* IMG_3374.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_3374.PNG; path = Images/IMG_3374.PNG; sourceTree = "<group>"; };
+		DD5799B61AD3016900AF22A3 /* IMG_3375.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_3375.PNG; path = Images/IMG_3375.PNG; sourceTree = "<group>"; };
+		DD5799B71AD3016900AF22A3 /* IMG_3376.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_3376.PNG; path = Images/IMG_3376.PNG; sourceTree = "<group>"; };
 		DD661F961ABF442F0004168B /* NewPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPickerViewController.h; sourceTree = "<group>"; };
 		DD661F971ABF442F0004168B /* NewPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPickerViewController.m; sourceTree = "<group>"; };
 		DD661F981ABF442F0004168B /* NewPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewPickerViewController.xib; sourceTree = "<group>"; };
@@ -562,7 +578,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Cycle Columbus.app */,
+				1D6058910D05DD3D006BFB54 /* Fountain City Cycling.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -668,6 +684,14 @@
 		6411A16A106A05DE00C201F0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DD5799B01AD3016900AF22A3 /* IMG_3369.PNG */,
+				DD5799B11AD3016900AF22A3 /* IMG_3370.PNG */,
+				DD5799B21AD3016900AF22A3 /* IMG_3371.PNG */,
+				DD5799B31AD3016900AF22A3 /* IMG_3372.PNG */,
+				DD5799B41AD3016900AF22A3 /* IMG_3373.PNG */,
+				DD5799B51AD3016900AF22A3 /* IMG_3374.PNG */,
+				DD5799B61AD3016900AF22A3 /* IMG_3375.PNG */,
+				DD5799B71AD3016900AF22A3 /* IMG_3376.PNG */,
 				DDD8920B1ABCDC8000046C72 /* note-list.png */,
 				DDD891FD1ABCD67E00046C72 /* intro.png */,
 				DDD891FE1ABCD67E00046C72 /* note-detail.png */,
@@ -873,7 +897,7 @@
 			);
 			name = "Cycle Atlanta";
 			productName = CycleTracks;
-			productReference = 1D6058910D05DD3D006BFB54 /* Cycle Columbus.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* Fountain City Cycling.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -922,9 +946,12 @@
 				6411A195106A90E400C201F0 /* work-related.tif in Resources */,
 				64577E29106DC2FD003ACBFD /* dist.plist in Resources */,
 				642F150C1071D9910050BCB9 /* MapViewController.xib in Resources */,
+				DD5799B81AD3016900AF22A3 /* IMG_3369.PNG in Resources */,
 				6458114E107AA4D30075DABD /* bicycle-bell-normalized.aiff in Resources */,
 				DDD892081ABCD67E00046C72 /* settings.png in Resources */,
+				DD5799B91AD3016900AF22A3 /* IMG_3370.PNG in Resources */,
 				644ED3E410853DEC008725A8 /* commuter2.png in Resources */,
+				DD5799BA1AD3016900AF22A3 /* IMG_3371.PNG in Resources */,
 				64210F29113508B800415F1A /* MainWindow.xib in Resources */,
 				DDF742881ACB32540053A11A /* Icon-Spotlight-40@2x.png in Resources */,
 				64FCC5B411352242000FA1B6 /* PersonalInfo.xib in Resources */,
@@ -994,12 +1021,15 @@
 				DDF742641ACB320C0053A11A /* Images.xcassets in Resources */,
 				9D4648191604EF2600A4F9CB /* school@2x.png in Resources */,
 				9D46481A1604EF2600A4F9CB /* shopping.png in Resources */,
+				DD5799BC1AD3016900AF22A3 /* IMG_3373.PNG in Resources */,
 				9D46481B1604EF2600A4F9CB /* shopping@2x.png in Resources */,
 				9D46481C1604EF2600A4F9CB /* social.png in Resources */,
 				9D46481D1604EF2600A4F9CB /* social@2x.png in Resources */,
 				9D46481E1604EF2600A4F9CB /* workRelated.png in Resources */,
 				9D46481F1604EF2600A4F9CB /* workRelated@2x.png in Resources */,
+				DD5799BE1AD3016900AF22A3 /* IMG_3375.PNG in Resources */,
 				9D4648261604EF2F00A4F9CB /* LCD-screen-288x126.png in Resources */,
+				DD5799BB1AD3016900AF22A3 /* IMG_3372.PNG in Resources */,
 				9D4648271604EF2F00A4F9CB /* lcd-screen.png in Resources */,
 				9D4648281604EF2F00A4F9CB /* lcd-screen@2x.png in Resources */,
 				DDF742811ACB32540053A11A /* Icon-76@3x.png in Resources */,
@@ -1007,11 +1037,13 @@
 				9D4648291604EF2F00A4F9CB /* MapCoord.png in Resources */,
 				9D46482A1604EF2F00A4F9CB /* record-map-frame-288x141.png in Resources */,
 				DDD8920A1ABCD67E00046C72 /* trip-type.png in Resources */,
+				DD5799BF1AD3016900AF22A3 /* IMG_3376.PNG in Resources */,
 				9D4648341604EF3800A4F9CB /* tabbar_instructions.png in Resources */,
 				9D4648351604EF3800A4F9CB /* tabbar_instructions@2x.png in Resources */,
 				9D4648361604EF3800A4F9CB /* tabbar_record.png in Resources */,
 				9D4648371604EF3800A4F9CB /* tabbar_record@2x.png in Resources */,
 				9D4648381604EF3800A4F9CB /* tabbar_settings.png in Resources */,
+				DD5799BD1AD3016900AF22A3 /* IMG_3374.PNG in Resources */,
 				9D4648391604EF3800A4F9CB /* tabbar_settings@2x.png in Resources */,
 				9D46483A1604EF3800A4F9CB /* tabbar_view.png in Resources */,
 				9D46483B1604EF3800A4F9CB /* tabbar_view@2x.png in Resources */,
@@ -1133,7 +1165,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Cycle Columbus";
+				PRODUCT_NAME = "Fountain City Cycling";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -1155,7 +1187,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Cycle Columbus";
+				PRODUCT_NAME = "Fountain City Cycling";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -1190,7 +1222,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Cycle Columbus";
+				PRODUCT_NAME = "Fountain City Cycling";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -1230,7 +1262,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Cycle Columbus";
+				PRODUCT_NAME = "Fountain City Cycling";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -1266,7 +1298,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Cycle Columbus";
+				PRODUCT_NAME = "Fountain City Cycling";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};

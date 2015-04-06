@@ -35,8 +35,10 @@
     LoadingView *loading;
     NSInteger pickerCategory;
     Note * selectedNote;
+    
+    //int shouldNoteDelete;
 }
-
+@property (nonatomic, weak) NSString *shouldNoteDelete;
 @property (nonatomic, strong) NSMutableArray *notes;
 @property (nonatomic, strong) NoteManager *noteManager;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
@@ -48,5 +50,7 @@
 - (id)initWithNoteManager:(NoteManager*)manager;
 
 - (void)displayUploadedNote;
+-(void)deleteUselessNote;
+
 
 @end

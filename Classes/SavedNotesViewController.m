@@ -76,7 +76,7 @@
 @synthesize noteManager;
 @synthesize notes;
 @synthesize selectedNote;
-
+@synthesize shouldNoteDelete;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -130,7 +130,7 @@
 	
 	NSError *error;
 	NSInteger count = [noteManager.managedObjectContext countForFetchRequest:request error:&error];
-	NSLog(@"count = %d", count);
+	NSLog(@"count = %ld", (long)count);
 	
 	NSMutableArray *mutableFetchResults = [[noteManager.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
 
@@ -152,6 +152,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
 
+    //shouldNoteDelete = 1;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -179,6 +180,43 @@
 	[self refreshTableView];
     
 	[super viewWillAppear:animated];
+    
+    
+    // With out this if statement, if "Note This..." was pressed, but the user decided to cancel,
+    // a new note was still placed in the my notes section regardless.
+    // As a crappy fix, I set "shouldNoteDelete" in the NSUserDefaults to "YES" if the cancel button was pressed.
+    // So, if it is equal to yes, we will delete the first row of the tableview.
+    // And of course, we reset "shouldNoteDelete" to "NO", and syncronize it so this doesn't happen every
+    // time the view appears/will appear.
+    if([[[NSUserDefaults standardUserDefaults] objectForKey:@"shouldNoteDelete"] isEqualToString:@"YES"])
+    {
+        NSLog(@"View Will Appear deletion of useless cell");
+        
+        [[NSUserDefaults standardUserDefaults] setObject:@"NO" forKey:@"shouldNoteDelete"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [self tableView:self.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:self.tableView.indexPathsForVisibleRows[0]];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    
+    // With out this if statement, if "Note This..." was pressed, but the user decided to cancel,
+    // a new note was still placed in the my notes section regardless.
+    // As a crappy fix, I set "shouldNoteDelete" in the NSUserDefaults to "YES" if the cancel button was pressed.
+    // So, if it is equal to yes, we will delete the first row of the tableview.
+    // And of course, we reset "shouldNoteDelete" to "NO", and syncronize it so this doesn't happen every
+    // time the view appears/will appear.
+    if([[[NSUserDefaults standardUserDefaults] objectForKey:@"shouldNoteDelete"] isEqualToString:@"YES"])
+    {
+        NSLog(@"View Did Appear deletion of useless cell");
+        [[NSUserDefaults standardUserDefaults] setObject:@"NO" forKey:@"shouldNoteDelete"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [self tableView:self.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:self.tableView.indexPathsForVisibleRows[0]];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -241,7 +279,6 @@
 //    if (cell == nil) {
 //        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 //    }
-    
     static NSDateFormatter *dateFormatter = nil;
     if (dateFormatter == nil) {
         dateFormatter = [[NSDateFormatter alloc] init];
@@ -256,6 +293,7 @@
     Note *note = (Note *)[notes objectAtIndex:indexPath.row];
 	NoteCell *cell = nil;
     
+    
     UIImage	*image;
     
     if(note.uploaded){
@@ -269,7 +307,7 @@
         if (index >=0 && index <=5) {
             image = [UIImage imageNamed:kNoteThisIssue];
         }
-        else if (index>=6 && index<=11) {
+        else if (index>=6 && index<=12) {
             image = [UIImage imageNamed:kNoteThisAsset];
         }
         else{
@@ -363,8 +401,7 @@
     
     //[cell addSubview:purposeText];
     //[cell addSubview:timeText];
-
-    
+    cell.tag = indexPath.row;
     return cell;
 }
 
@@ -437,6 +474,20 @@
     return YES;
 }
 
+
+-(void)deleteUselessNote
+{
+//    NSManagedObject *noteToDelete = [notes objectAtIndex:0];
+//    [noteManager.managedObjectContext deleteObject:noteToDelete];
+//    [notes removeObjectAtIndex:0];
+    
+    // Delete the managed object at the given index path.
+
+    
+    NSLog(@"Setting shouldNoteDelete = 10");
+    shouldNoteDelete = @"YES";
+    
+}
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {

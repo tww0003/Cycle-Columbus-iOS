@@ -521,7 +521,6 @@
     NSString *kcal = [formatter stringFromNumber:[NSNumber numberWithDouble:formala]];
     NSString *coTwo = [NSString stringWithFormat:@"CO2 Saved: %.1f lbs", 0.93 * [trip.distance doubleValue] / 1609.344];
    // NSString *distanced = [NSString stringWithFormat:@"%f", (distance * .0006212f)];
-    NSString *distanced = [NSString stringWithFormat:@"%f", [trip.distance doubleValue] / 1609.344];
 
     
     NSNumber *iHateObjectiveC = @(.592);
@@ -530,6 +529,9 @@
     
     // Changing the rounding to 2 places for average cost.
     [formatter setMaximumFractionDigits:2];
+    
+
+    NSString *distanced = [formatter stringFromNumber:[NSNumber numberWithFloat:([trip.distance floatValue] / 1609.344f)]];
 
     // 2 decimal places
     NSString *avgCost = [formatter stringFromNumber:averageCost];
