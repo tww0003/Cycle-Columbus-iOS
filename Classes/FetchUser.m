@@ -205,7 +205,7 @@
     [urlRequest setURL:[NSURL URLWithString:kFetchURL]];
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [urlRequest setValue:[NSString stringWithFormat:@"%d", [postData length]] forHTTPHeaderField:@"Content-Length"];
+    [urlRequest setValue:[NSString stringWithFormat:@"%ld", [postData length]] forHTTPHeaderField:@"Content-Length"];
     [urlRequest setHTTPBody:postData];
 	
 	// create the connection with the request and start loading the data
@@ -229,7 +229,7 @@
  totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 {
 	NSLog(@"%lu bytesWritten, %lu totalBytesWritten, %lu totalBytesExpectedToWrite",
-		  bytesWritten, totalBytesWritten, totalBytesExpectedToWrite );
+		  (long) bytesWritten, totalBytesWritten, totalBytesExpectedToWrite );
 }
 
 

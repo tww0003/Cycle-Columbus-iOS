@@ -85,24 +85,6 @@ const CGFloat kViewHeight = 44;
 					actualFontSize:NULL
 					lineBreakMode:NSLineBreakByTruncatingTail
 					baselineAdjustment:UIBaselineAdjustmentAlignBaselines];
-    
-    // Create text attributes
-    //NSDictionary *textAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:MIN_MAIN_FONT_SIZE]};
-    
-    
-//    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: @"16", @"minFontSize", @"NULL", @"actualFontSize", @"NSLineBreakByTruncatingTail", @"lineBreakMode", @"UIBaselineAdjustmentAlignBaselines", @"baselineAdjustment", nil];
-//
-//    // Create string drawing context
-//    NSStringDrawingContext *drawingContext = [[NSStringDrawingContext alloc] init];
-//    drawingContext.minimumScaleFactor = MIN_MAIN_FONT_SIZE / 2; // Half the font size
-//    
-//    CGRect drawRect = CGRectMake(0.0, 0.0, kViewWidth, kViewHeight);
-//    [self.title drawWithRect:drawRect
-//                 options:NSStringDrawingUsesLineFragmentOrigin
-//              attributes:attributes
-//                 context:drawingContext];
-
-    
 }
 
 

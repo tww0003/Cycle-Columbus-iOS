@@ -88,20 +88,20 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationController" key="IBUISelectedViewController" id="213160608">
-					<string key="IBUITitle">My Trips</string>
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="1025489404">
-						<string key="IBUITitle">My Trips</string>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="609938122">
+					<string key="IBUITitle">Record</string>
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="246586907">
+						<string key="IBUITitle">Record</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">tabbar_view.png</string>
+							<string key="NSResourceName">tabbar_record.png</string>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<reference key="IBUIParentViewController" ref="835399444"/>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="682810656">
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="588035457">
 						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{0, 0}</string>
@@ -111,33 +111,35 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<array class="NSMutableArray" key="IBUIViewControllers">
-						<object class="IBUIViewController" id="1071074092">
-							<string key="IBUITitle">Trips</string>
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="366356441">
-								<string key="IBUITitle">My Trips</string>
+						<object class="IBUIViewController" id="18922672">
+							<string key="IBUITitle">Record</string>
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="870192499">
+								<string key="IBUITitle">Record</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<reference key="IBUIParentViewController" ref="213160608"/>
+							<reference key="IBUIParentViewController" ref="609938122"/>
+							<string key="IBUINibName">RecordMap</string>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							<bool key="IBUIHorizontal">NO</bool>
 						</object>
 					</array>
 				</object>
 				<array class="NSMutableArray" key="IBUIViewControllers">
-					<object class="IBUINavigationController" id="609938122">
-						<string key="IBUITitle">Record</string>
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="246586907">
-							<string key="IBUITitle">Record</string>
+					<reference ref="609938122"/>
+					<object class="IBUINavigationController" id="213160608">
+						<string key="IBUITitle">My Trips</string>
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="1025489404">
+							<string key="IBUITitle">My Trips</string>
 							<object class="NSCustomResource" key="IBUIImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">tabbar_record.png</string>
+								<string key="NSResourceName">tabbar_view.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 						<reference key="IBUIParentViewController" ref="835399444"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="588035457">
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="682810656">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{0, 0}</string>
@@ -147,20 +149,18 @@
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 						<array class="NSMutableArray" key="IBUIViewControllers">
-							<object class="IBUIViewController" id="18922672">
-								<string key="IBUITitle">Record</string>
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="870192499">
-									<string key="IBUITitle">Record</string>
+							<object class="IBUIViewController" id="1071074092">
+								<string key="IBUITitle">Trips</string>
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="366356441">
+									<string key="IBUITitle">My Trips</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIParentViewController" ref="609938122"/>
-								<string key="IBUINibName">RecordMap</string>
+								<reference key="IBUIParentViewController" ref="213160608"/>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<bool key="IBUIHorizontal">NO</bool>
 							</object>
 						</array>
 					</object>
-					<reference ref="213160608"/>
 					<object class="IBUINavigationController" id="909100406">
 						<string key="IBUITitle">My Notes</string>
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="965922684">
@@ -266,7 +266,7 @@
 					<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					<array class="NSMutableArray" key="IBUIItems"/>
-					<reference key="IBUISelectedItem" ref="1025489404"/>
+					<reference key="IBUISelectedItem" ref="246586907"/>
 				</object>
 			</object>
 		</array>

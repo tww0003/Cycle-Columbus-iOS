@@ -533,7 +533,15 @@
 
     // 2 decimal places
     NSString *avgCost = [formatter stringFromNumber:averageCost];
-        
+    
+    // Solid variable names, I know. These are for the server-side leaderboard.
+    
+    NSNumber *scoreNSNumber = @(10);
+    NSNumber *scoreNSNumbered = [NSNumber numberWithFloat:([scoreNSNumber floatValue] * ([trip.distance floatValue] / 1609.344f))];
+    NSString *leaderBoardString = [formatter stringFromNumber:scoreNSNumbered];
+    
+    
+    
 	// NOTE: device hash added by SaveRequest initWithPostVars
     // FOR WHOEVER HAS TO READ/MAINTAIN/MODIFY THIS CODE NEXT
     // First off, I'm sorry.
@@ -555,6 +563,7 @@
                               avgCost, @"avgcost",
                               distanced, @"distance",
                               coTwo, @"cotwo",
+                              leaderBoardString, @"score",
 							  nil];
 	// create save request
 	SaveRequest *saveRequest = [[SaveRequest alloc] initWithPostVars:postVars with:3 image:NULL];

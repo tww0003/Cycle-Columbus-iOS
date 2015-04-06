@@ -175,8 +175,8 @@
     else {
         //note.image_url = [NSString stringWithFormat:@"%@-%@-type-%@",deviceUniqueIdHash1,newDateStringURL,note.note_type];
         note.image_url = [NSString stringWithFormat:@"%@-%@-type-%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"deviceIDbased"],newDateStringURL,note.note_type];
-
     }
+    
     NSLog(@"img_url: %@", note.image_url);
     
     UIImage *castedImage = [[UIImage alloc] initWithData:note.image_data];
@@ -192,7 +192,7 @@
     }
     NSData *uploadData = [[NSData alloc] initWithData:UIImageJPEGRepresentation([ImageResize imageWithImage:castedImage scaledToSize:size], kJpegQuality)];
     
-    NSLog(@"Size of Image(bytes):%d", [uploadData length]);
+    NSLog(@"Size of Image(bytes):%lu", (unsigned long)[uploadData length]);
     
     [noteDict setValue:note.image_url forKey:@"i"];  //image_url
     //[noteDict setValue:note.image_data forKey:@"g"];  //image_data
@@ -304,7 +304,7 @@
     
     NSData *uploadData = [[NSData alloc] initWithData:UIImageJPEGRepresentation([ImageResize imageWithImage:castedImage scaledToSize:size], kJpegQuality)];
     
-    NSLog(@"Size of Image(bytes):%d", [uploadData length]);
+    NSLog(@"Size of Image(bytes):%lu", (unsigned long)[uploadData length]);
     
     [noteDict setValue:_note.image_url forKey:@"i"];  //image_url
     //[noteDict setValue:note.image_data forKey:@"g"];  //image_data
@@ -362,8 +362,8 @@
 - (void)connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten
  totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 {
-	NSLog(@"%d bytesWritten, %d totalBytesWritten, %d totalBytesExpectedToWrite",
-		  bytesWritten, totalBytesWritten, totalBytesExpectedToWrite );
+	NSLog(@"%ld bytesWritten, %ld totalBytesWritten, %ld totalBytesExpectedToWrite",
+		  bytesWritten, totalBytesWritten, (long)totalBytesExpectedToWrite );
 }
 
 
@@ -455,7 +455,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
 	// do something with the data
-    NSLog(@"+++++++DEBUG: Received %d bytes of data", [receivedDataNoted length]);
+    NSLog(@"+++++++DEBUG: Received %ld bytes of data", [receivedDataNoted length]);
 	NSLog(@"%@", [[NSString alloc] initWithData:receivedDataNoted encoding:NSUTF8StringEncoding] );
     
     // release the connection, and the data object

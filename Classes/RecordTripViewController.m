@@ -990,7 +990,7 @@ shouldSelectViewController:(UIViewController *)viewController
 	
 	NSError *error;
 	NSInteger count = [noteManager.managedObjectContext countForFetchRequest:request error:&error];
-	NSLog(@"count = %d", count);
+	NSLog(@"count = %ld", count);
 	
 	NSMutableArray *mutableFetchResults = [[noteManager.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
     
