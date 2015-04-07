@@ -214,7 +214,6 @@
         NSLog(@"View Did Appear deletion of useless cell");
         [[NSUserDefaults standardUserDefaults] setObject:@"NO" forKey:@"shouldNoteDelete"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        
         [self tableView:self.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:self.tableView.indexPathsForVisibleRows[0]];
     }
 }
@@ -474,16 +473,9 @@
     return YES;
 }
 
-
+// This honestly does nothing right now. It used to, but not anymore.
 -(void)deleteUselessNote
 {
-//    NSManagedObject *noteToDelete = [notes objectAtIndex:0];
-//    [noteManager.managedObjectContext deleteObject:noteToDelete];
-//    [notes removeObjectAtIndex:0];
-    
-    // Delete the managed object at the given index path.
-
-    
     NSLog(@"Setting shouldNoteDelete = 10");
     shouldNoteDelete = @"YES";
     

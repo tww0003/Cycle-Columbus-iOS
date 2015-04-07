@@ -222,7 +222,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* CycleAtlantaAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleAtlantaAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* CycleAtlantaAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleAtlantaAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* Fountain City Cycling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fountain City Cycling.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* FC Cycling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FC Cycling.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28D801B30F44B63D00FB423F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -578,7 +578,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Fountain City Cycling.app */,
+				1D6058910D05DD3D006BFB54 /* FC Cycling.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -897,7 +897,7 @@
 			);
 			name = "Cycle Atlanta";
 			productName = CycleTracks;
-			productReference = 1D6058910D05DD3D006BFB54 /* Fountain City Cycling.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* FC Cycling.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1165,7 +1165,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Fountain City Cycling";
+				PRODUCT_NAME = "FC Cycling";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -1187,7 +1187,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Fountain City Cycling";
+				PRODUCT_NAME = "FC Cycling";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -1222,7 +1222,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Fountain City Cycling";
+				PRODUCT_NAME = "FC Cycling";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -1262,7 +1262,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Fountain City Cycling";
+				PRODUCT_NAME = "FC Cycling";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -1298,7 +1298,7 @@
 				GCC_PREFIX_HEADER = "Cycle Atlanta_Prefix.pch";
 				INFOPLIST_FILE = "Cycle Atlanta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Fountain City Cycling";
+				PRODUCT_NAME = "FC Cycling";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
