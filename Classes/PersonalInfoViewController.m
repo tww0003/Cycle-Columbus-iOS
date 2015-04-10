@@ -42,6 +42,7 @@
 #import "User.h"
 #import "constants.h"
 #import "ProgressView.h"
+#import "LeaderboardViewController.h"
 
 #define kMaxCyclingFreq 3
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
@@ -606,7 +607,7 @@
 			return @"How long have you been a cyclist?";
 			break;
         case 6:
-			return @"Did you accidently delete a trip or two? Download them to get them back!";
+			return @"";
 			break;
 	}
     return nil;
@@ -859,7 +860,7 @@
 			switch ([indexPath indexAtPosition:1])
 			{
 				case 0:
-					cell.textLabel.text = @"Download Previously Saved Trips";
+					cell.textLabel.text = @"Fountain City Cycling Website";
 					break;
 			}
 			
@@ -969,11 +970,9 @@
 			// inner switch statement identifies row
 			switch ([indexPath indexAtPosition:1])
 			{
-				case 0:                                                        
-                    [fetchUser fetchUserAndTrip:self.parentViewController];
-                    //reload data didn't seem to refresh the view. this does
-                    //[self viewWillAppear:false];
-					break;
+				case 0:
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.columbusga.org/planning/fcc/fcc.htm"]];
+                    break;
 				case 1:
 					break;
 			}

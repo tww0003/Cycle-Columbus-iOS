@@ -49,6 +49,7 @@
 #import "Note.h"
 #import "NewPickerViewController.h"
 #import "NewTripPurposeViewController.h"
+#import "LeaderboardViewController.h"
 
 
 @class ReminderManager;
@@ -81,6 +82,9 @@
 	IBOutlet UILabel *distCounter;
 	IBOutlet UILabel *speedCounter;
     UIActionSheet *saveActionSheet;
+    
+    LeaderboardViewController *leaderboardVC;
+    UINavigationController *leaderNav;
 
 
 	NSTimer *__weak timer;
@@ -121,6 +125,7 @@
 @property (nonatomic, strong) NoteManager *noteManager;
 @property (nonatomic, strong) CycleAtlantaAppDelegate *appDelegate;
 @property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, weak) IBOutlet UIButton *leaderboardButton;
 
 - (void)initTripManager:(TripManager*)manager;
 - (void)initNoteManager:(NoteManager*)manager;

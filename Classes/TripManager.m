@@ -559,8 +559,7 @@
 							  notes, @"notes",
 							  start, @"start",
 							  userJson, @"user",
-                              
-							  [NSString stringWithFormat:@"%d", kSaveProtocolVersion], @"version",
+                              [NSString stringWithFormat:@"%d", kSaveProtocolVersion], @"version",
                               kcal, @"kcal",
                               avgCost, @"avgcost",
                               distanced, @"distance",

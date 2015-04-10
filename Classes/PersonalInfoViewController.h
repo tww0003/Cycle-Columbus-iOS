@@ -43,6 +43,7 @@
 #import "InformationViewController.h"
 
 @class User;
+@class LeaderboardViewController;
 
 
 @interface PersonalInfoViewController : UITableViewController <UITextFieldDelegate, UIAlertViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate, UIWebViewDelegate>
@@ -53,6 +54,9 @@
     
     InformationViewController *infoVC;
     UINavigationController *infoNav;
+    
+    LeaderboardViewController *leaderboardVC;
+    UINavigationController *leaderNav;
 
 	UITextField *age;
 	UITextField *email;

@@ -59,7 +59,7 @@
 @synthesize recording, shouldUpdateCounter, userInfoSaved;
 @synthesize appDelegate;
 @synthesize saveActionSheet;
-@synthesize locationManager;
+@synthesize locationManager, leaderboardButton;
 
 #pragma mark CLLocationManagerDelegate methods
 
@@ -212,6 +212,13 @@
 		[[UIApplication sharedApplication] openURL:[NSURL URLWithString: kInfoURL]];
 }
 
+-(IBAction)showTheLeaders:(id)sender
+{
+    leaderboardVC = [[LeaderboardViewController alloc] init];
+    leaderNav = [[UINavigationController alloc] initWithRootViewController:leaderboardVC];
+    
+    [self.navigationController presentViewController:leaderNav animated:YES completion:nil];
+}
 
 - (void)viewDidLoad
 {
