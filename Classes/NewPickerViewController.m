@@ -1,8 +1,8 @@
 //
 //  NewPickerViewController.m
-//  Cycle Atlanta
+//  Fountain City Cycling
 //
-//  Created by Nathaniel Thomas on 3/22/15.
+//  Created by Tyler Williamson on 3/22/15.
 //
 //
 //  The old class for this was not working correctly.

@@ -1,8 +1,8 @@
 //
 //  LeaderboardViewController.m
-//  Cycle Atlanta
+//  Fountain City Cycling
 //
-//  Created by Nathaniel Thomas on 4/10/15.
+//  Created by Tyler Williamson on 4/10/15.
 //
 //
 
@@ -88,7 +88,7 @@
     }
 }
 
-
+// Grabs the json data from the website
 -(NSDictionary *)downloadLeaderboard
 {
     // Grabbing the json data
@@ -128,13 +128,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //Change the selected background view of the cell.
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 

@@ -1,8 +1,8 @@
 //
 //  InformationViewController.h
-//  Cycle Atlanta
+//  Fountain City Cycling
 //
-//  Created by Nathaniel Thomas on 3/20/15.
+//  Created by Tyler Williamson on 3/20/15.
 //
 //
 

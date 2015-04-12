@@ -1,8 +1,8 @@
 //
 //  NewPickerViewController.h
-//  Cycle Atlanta
+//  Fountian City Cycling
 //
-//  Created by Nathaniel Thomas on 3/22/15.
+//  Created by Tyler Williamson on 3/22/15.
 //
 //
 
