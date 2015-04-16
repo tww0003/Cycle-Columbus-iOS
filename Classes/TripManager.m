@@ -501,16 +501,15 @@
     // JSON encode the trip data
     NSData *tripJsonData = [NSJSONSerialization dataWithJSONObject:tripDict options:0 error:&writeError];
     NSString *tripJson = [[NSString alloc] initWithData:tripJsonData encoding:NSUTF8StringEncoding];
-    //NSLog(@"trip data %@", tripJson);
-    
-    
     // Formula for kCal
-    double formala = 49 * [trip.distance doubleValue] / 1609.344 - 1.69;
+    double formala = 49 * ([trip.distance doubleValue] / 1609.344) - 1.69;
     // Making sure it isn't negative
     if(formala < 0)
     {
         formala = 0;
     }
+    
+    
     
     // We want formala (yes, I know I spelt it wrong, but I'm no professional speller. damn.) to be one decimal point.
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -520,11 +519,10 @@
 
     NSString *kcal = [formatter stringFromNumber:[NSNumber numberWithDouble:formala]];
     NSString *coTwo = [NSString stringWithFormat:@"CO2 Saved: %.1f lbs", 0.93 * [trip.distance doubleValue] / 1609.344];
-   // NSString *distanced = [NSString stringWithFormat:@"%f", (distance * .0006212f)];
+    kcal = [kcal stringByReplacingOccurrencesOfString:@"," withString:@""];
 
     
     NSNumber *iHateObjectiveC = @(.592);
-    //NSNumber *averageCost = [NSNumber numberWithFloat:([iHateObjectiveC floatValue] * (distance * .0006212f))];
     NSNumber *averageCost = [NSNumber numberWithFloat:([iHateObjectiveC floatValue] * ([trip.distance floatValue] / 1609.344f))];
     
     // Changing the rounding to 2 places for average cost.
@@ -537,12 +535,11 @@
     NSString *avgCost = [formatter stringFromNumber:averageCost];
     
     // Solid variable names, I know. These are for the server-side leaderboard.
-    
     NSNumber *scoreNSNumber = @(10);
     NSNumber *scoreNSNumbered = [NSNumber numberWithFloat:([scoreNSNumber floatValue] * ([trip.distance floatValue] / 1609.344f))];
     NSString *leaderBoardString = [formatter stringFromNumber:scoreNSNumbered];
-    
-    
+
+    NSString *agreement = [NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] valueForKey:@"contestAgreement"]];
     
 	// NOTE: device hash added by SaveRequest initWithPostVars
     // FOR WHOEVER HAS TO READ/MAINTAIN/MODIFY THIS CODE NEXT
@@ -565,6 +562,7 @@
                               distanced, @"distance",
                               coTwo, @"cotwo",
                               leaderBoardString, @"score",
+                              agreement, @"agree",
 							  nil];
 	// create save request
 	SaveRequest *saveRequest = [[SaveRequest alloc] initWithPostVars:postVars with:3 image:NULL];
